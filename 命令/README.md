@@ -1,66 +1,77 @@
-## Linux 命令分类索引
+# Linux 命令分类索引
 
-- 输入与输出
-    - [export](export.md)
-    - [alias](alias.md)
-    - [unalias](unalias.md)
-    - [echo](echo.md)
-    - [history](history.md)
-    - [cat](cat.md)
-    - [more](more.md)
-    - [head](head.md)
-    - [tail](tail.md)
-    - [tr](tr.md)
-    - [wc](wc.md)
-    - [stat](stat.md)
-    - [cut](cut.md)
-    - [diff](diff.md)
-    - [grep](grep.md)
-    - [find](find.md)
+## 输入与输出
 
-- 权限与执行
-    - [source](source.md)
-    - [chmod](chmod.md)
+- [alias](alias.md)
+- [cat](cat.md)
+- [cut](cut.md)
+- [diff](diff.md)
+- [echo](echo.md)
+- [export](export.md)
+- [find](find.md)
+- [grep](grep.md)
+- [head](head.md)
+- [history](history.md)
+- [more](more.md)
+- [read](read.md) - 从标准输入读取一行，依次赋值
+- [stat](stat.md)
+- [tail](tail.md)
+- [tr](tr.md)
+- [unalias](unalias.md)
+- [wc](wc.md)
 
-- 开关机
-    - [ctrlaltdel](ctrlaltdel.md)
-    - [halt](halt.md)
-    - [reboot](reboot.md)
-    - [poweroff](poweroff.md)
-    - [shutdown](shutdown.md)
+## 文件与目录
 
-- 进程负载
-    - [kill](kill.md)
-    - [killall](killall.md)
-    - [pidof](pidof.md)
-    - [ps](ps.md)
-    - [top](top.md)
-    - [uptime](uptime.md)
-    - [free](free.md)
+- [cd](cd.md)
+- [cp](cp.md)
+- [dd](dd.md)
+- [file](file.md)
+- [ls](ls.md)
+- [mkdir](mkdir.md)
+- [mv](mv.md)
+- [pwd](pwd.md)
+- [rm](rm.md)
+- [tar](tar.md)
+- [touch](touch.md)
 
-- 网络
-    - [wget](wget.md)
-    - [ifconfig](ifconfig.md)
+## 权限与执行
 
-- 用户管理
-    - [who](who.md)
-    - [last](last.md)
+- [at](at.md) - 设置一次性定时执行任务
+- [chmod](chmod.md)
+- [source](source.md)
 
-- 系统信息
-    - [sosreport](sosreport.md)
-    - [date](date.md)
-    - [ifconfig](ifconfig.md)
-    - [uname](uname.md)
+## 开关机
 
-- 文件与目录
-    - [pwd](pwd.md)
-    - [cd](cd.md)
-    - [ls](ls.md)
-    - [touch](touch.md)
-    - [mkdir](mkdir.md)
-    - [cp](cp.md)
-    - [mv](mv.md)
-    - [rm](rm.md)
-    - [dd](dd.md)
-    - [file](file.md)
-    - [tar](tar.md)
+- [ctrlaltdel](ctrlaltdel.md)
+- [halt](halt.md)
+- [poweroff](poweroff.md)
+- [reboot](reboot.md)
+- [shutdown](shutdown.md)
+
+## 进程负载
+
+- [free](free.md)
+- [kill](kill.md)
+- [killall](killall.md)
+- [pidof](pidof.md)
+- [ps](ps.md)
+- [top](top.md)
+- [uptime](uptime.md)
+
+## 网络
+
+- [ifconfig](ifconfig.md)
+- [wget](wget.md)
+
+## 用户管理
+
+- [last](last.md)
+- [passwd](passwd.md) - 修改用户名密码
+- [who](who.md)
+
+## 系统信息
+
+- [date](date.md)
+- [ifconfig](ifconfig.md)
+- [sosreport](sosreport.md)
+- [uname](uname.md)
