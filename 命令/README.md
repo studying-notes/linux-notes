@@ -34,10 +34,10 @@
 - [tar](tar.md)
 - [touch](touch.md)
 
-## 权限与执行
+## 计划与执行
 
 - [at](at.md) - 设置一次性定时执行任务
-- [chmod](chmod.md)
+- [crontab](crontab.md) - 设置长期性计划任务
 - [source](source.md)
 
 ## 开关机
@@ -63,10 +63,16 @@
 - [ifconfig](ifconfig.md)
 - [wget](wget.md)
 
-## 用户管理
+## 用户与权限
 
 - [last](last.md)
+- [chmod](chmod.md)
+- [groupadd](groupadd.md) - 创建新的用户组
+- [id](id.md) - 显示指定用户的相关信息
 - [passwd](passwd.md) - 修改用户名密码
+- [useradd](useradd.md) - 创建新的用户
+- [userdel](userdel.md) - 删除用户
+- [usermod](usermod.md) - 修改用户的属性
 - [who](who.md)
 
 ## 系统信息
@@ -75,3 +81,4 @@
 - [ifconfig](ifconfig.md)
 - [sosreport](sosreport.md)
 - [uname](uname.md)
+- [whereis](whereis.md) - 定位二进制执行文件、源文件、手册主页文件的位置

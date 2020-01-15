@@ -65,3 +65,17 @@ passwd: all authentication tokens updated successfully.
 $ echo -e "admin\nadmin" | passwd admin
 Enter new UNIX password: Retype new UNIX password: passwd: password updated successfully
 ```
+
+3. 禁止某用户登录
+
+```bash
+$ passwd -l cxfans
+passwd: password expiry information changed.
+
+$ passwd -S cxfans
+cxfans L 01/14/2020 0 99999 7 -1
+
+$ passwd -u cxfans
+passwd: unlocking the password would result in a passwordless account.
+You should set a password with usermod -p to unlock the password of this account.
+```
