@@ -65,15 +65,22 @@
 
 ## 用户与权限
 
-- [last](last.md)
-- [chmod](chmod.md)
+- [chattr](chattr.md) - 设置文件的隐藏权限
+- [chmod](chmod.md) - 设置文件或目录的权限
+- [chown](chown.md) - 设置文件或目录的所有者和所属组
+- [getfacl](getfacl.md) - 显示文件上设置的 ACL 信息
 - [groupadd](groupadd.md) - 创建新的用户组
 - [id](id.md) - 显示指定用户的相关信息
+- [last](last.md) - 显示用户的登录日志
+- [lsattr](lsattr.md) - 显示文件的隐藏权限
 - [passwd](passwd.md) - 修改用户名密码
+- [setfacl](setfacl.md) - 管理文件的 ACL 规则
+- [su](su.md) - 切换用户
+- [sudo](sudo.md) - 给普通用户提供额外的权限
 - [useradd](useradd.md) - 创建新的用户
 - [userdel](userdel.md) - 删除用户
 - [usermod](usermod.md) - 修改用户的属性
-- [who](who.md)
+- [who](who.md) - 显示当前用户名及其启动的终端信息
 
 ## 系统信息
 
