@@ -20,19 +20,22 @@
 - [unalias](unalias.md)
 - [wc](wc.md)
 
-## 文件与目录
+## 文件与存储
 
 - [cd](cd.md)
 - [cp](cp.md)
 - [dd](dd.md)
+- [fdisk](fdisk.md) - 管理硬盘设备，提供添加、删除、转换分区等功能
 - [file](file.md)
 - [ls](ls.md)
 - [mkdir](mkdir.md)
+- [mount](mount.md) - 挂载文件系统
 - [mv](mv.md)
 - [pwd](pwd.md)
 - [rm](rm.md)
 - [tar](tar.md)
 - [touch](touch.md)
+- [umount](umount.md) - 卸载文件系统
 
 ## 计划与执行
 
