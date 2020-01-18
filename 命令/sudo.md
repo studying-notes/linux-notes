@@ -102,6 +102,14 @@ cxfans	ALL=NOPASSWD: /usr/bin/docker
 
 ## 示例
 
+1. 以 root 权限运行
+
 ```bash
 $ sudo docker ps
+```
+
+2. 切换到 root 用户
+
+```bash
+$ sudo -i
 ```
