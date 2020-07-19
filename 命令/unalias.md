@@ -25,4 +25,4 @@ $ unalias c
 
 ## 相关命令
 
-- [alias](alias.md)
+- [alias](alias.md) - 设置别名
