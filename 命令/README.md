@@ -5,6 +5,7 @@
 - [alias](alias.md) - 设置别名
 - [unalias](unalias.md) - 取消别名
 
+- [awk](awk.md) - 强大的文本处理工具
 - [cat](cat.md) - 将一个或多个文件的内容打印到标准输出
 - [cut](cut.md) - 按列提取文本字符
 - [diff](diff.md) - 按行比较多个文本文件的内容差异
@@ -26,6 +27,7 @@
 - [cd](cd.md) - 改变当前工作目录
 - [cp](cp.md) - 复制
 - [dd](dd.md) - 按照指定大小和个数的数据块来复制文件或转换文件
+- [du](du.md) - 显示指定文件的大小
 - [file](file.md) - 确定文件类型
 - [ln](ln.md) - 创建链接文件
 - [ls](ls.md) - 列出目录下文件的权限和属性信息
