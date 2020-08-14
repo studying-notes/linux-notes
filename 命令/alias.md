@@ -40,4 +40,4 @@ $ echo "alias c='clear'" >> ~/.profile
 
 ## 相关命令
 
-- [unalias](unalias.md)
+- [unalias](unalias.md) - 取消别名

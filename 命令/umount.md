@@ -12,8 +12,6 @@ umount [options] <source> | <directory>
 
 ## 参数
 
-### Options
-
 | 参数 | 作用 |
 | --------- | --------- |
 | -a, --all | unmount all filesystems |

@@ -52,3 +52,23 @@ $ usermod -G root cxfans
 $ id cxfans
 uid=1314(cxfans) gid=1314(cxfans) groups=1314(cxfans),0(root)
 ```
+
+2. 修改用户的默认终端
+
+```bash
+$ which fish
+/usr/bin/fish
+
+$ usermod -s /usr/bin/fish root
+```
+
+另外方法：
+
+```bash
+$ which fish
+/usr/bin/fish
+
+$ chsh -s /usr/bin/fish
+
+$ chsh -s `which fish`
+```

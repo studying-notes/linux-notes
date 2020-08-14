@@ -1,6 +1,6 @@
 # more 命令
 
-> A file perusal filter for CRT viewing.
+> CRT 文件浏览器
 
 ## 格式
 
