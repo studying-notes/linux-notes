@@ -17,6 +17,7 @@
 - [history](history.md) - 显示、管理以前执行过的命令
 - [more](more.md) - CRT 文件浏览器
 - [read](read.md) - 从标准输入读取一行，依次赋值
+- [sed](sed.md) - 强大的文本处理工具
 - [stat](stat.md) - 查询文件、文件系统状态信息
 - [tail](tail.md) - 默认打印每个文件的后 10 行到标准输出
 - [tr](tr.md) - 字符替换
