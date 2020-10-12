@@ -37,3 +37,9 @@ tar -tvf archive.tar
 # Extract all files from archive.tar.
 tar -xf archive.tar
 ```
+
+解压到指定目录
+
+```bash
+tar -xf archive.tar -C ~/archive
+```

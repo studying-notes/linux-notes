@@ -5,13 +5,13 @@ author: "Rustle Karl"  # 作者
 # 文章
 title: " Ubuntu 系统重装后的基本配置"  # 文章标题
 description: "每次系统重装、更换新的系统/硬件，开发环境的重新搭建都是一个巨大的工程"
-url:  "posts/2020/10/05/ubuntu"  # 设置网页链接，默认使用文件名
+url:  "posts/linux/config/ubuntu"  # 设置网页链接，默认使用文件名
 tags: [ "ubuntu", "linux", "config"]  # 自定义标签
 series: [ "系统重装基础配置"]  # 文章主题/文章系列
 categories: [ "基础配置"]  # 文章分类
 
 # 章节
-weight: 10 # 文章在章节中的排序优先级，正序排序
+weight: 20 # 文章在章节中的排序优先级，正序排序
 chapter: false  # 将页面设置为章节
 
 index: true  # 文章是否可以被索引
@@ -159,6 +159,10 @@ Setp 3. 设置别名，自定义变量
 fish alias.sh && source ~/.config/fish/config.fish
 ```
 
+```shell
+source ~/.config/fish/config.fish
+```
+
 Setp 4. 修改默认终端
 
 ```shell
@@ -191,6 +195,10 @@ apt install python3-pip
 ```
 
 ```shell
+source ~/.config/fish/config.fish
+```
+
+```shell
 pip install toolkit-py # 个人工具包
 ```
 
@@ -200,39 +208,4 @@ chs # 换源
 
 ### GO
 
-#### 下载安装
-
-这种方法对于 WSL 不太好。
-
-[Download Page](https://studygolang.com/dl)
-
-```shell
-tar -C /usr/local -xzf go1.15.2.linux-amd64.tar.gz
-```
-
-```shell
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile && source ~/.profile
-```
-
-```shell
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.config/fish/config.fish && source ~/.config/fish/config.fish
-```
-
-对于 WSL 可以通过 `apt` 安装：
-
-```shell
-apt install golang-go
-go version
-```
-
-#### 模块代理
-
-```shell
-go env -w GOPROXY=https://goproxy.cn,direct
-go env -w GOSUMDB=off
-go env -w GO111MODULE=on
-```
-
-```shell
-go env -w GOBIN=/usr/local/go/bin
-```
+{{<card src="posts/go/doc/install">}}
