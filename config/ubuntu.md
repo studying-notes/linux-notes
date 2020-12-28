@@ -7,7 +7,7 @@ title: " Ubuntu 系统重装后的基本配置"  # 文章标题
 description: "每次系统重装、更换新的系统/硬件，开发环境的重新搭建都是一个巨大的工程"
 url:  "posts/linux/config/ubuntu"  # 设置网页链接，默认使用文件名
 tags: [ "ubuntu", "linux", "config"]  # 自定义标签
-series: [ "系统重装基础配置"]  # 文章主题/文章系列
+series: [ "系统重装基础配置", "Linux 学习笔记" ]  # 文章主题/文章系列
 categories: [ "基础配置"]  # 文章分类
 
 # 章节
@@ -20,7 +20,7 @@ draft: false  # 草稿
 
 ## 基础配置
 
-### WSL 默认登录 root 用户
+### WSL 默认 root
 
 ```shell
 ubuntu config --default-user root
@@ -31,6 +31,8 @@ ubuntu2004 config --default-user root
 ```
 
 ### 换镜像源
+
+> VMware 设置共享文件夹
 
 执行自动换源脚本：
 
@@ -43,7 +45,7 @@ ubuntu2004 config --default-user root
 ./v20.sh
 ```
 
-更新系统：
+### 更新系统
 
 ```shell
 apt update && apt upgrade
@@ -63,13 +65,15 @@ apt-get install open-vm-tools-desktop
 apt-get install open-vm-tools
 ```
 
-### 非 WSL 启用 SSH 登录 root
+### 启用 SSH 登录 root
 
 1. 安装 SSH 服务
 
 ```shell
 apt install openssh-server
+```
 
+```shell
 # 启动服务
 systemctl start ssh
 ```
@@ -90,30 +94,47 @@ passwd root
 
 ```shell
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+```
+
+```shell
 sed -i "s/PermitRootLogin prohibit-password/#PermitRootLogin prohibit-password/g" /etc/ssh/sshd_config
 ```
 
 ```shell
 # 重启服务
 systemctl restart ssh
+```
 
+```shell
 service ssh restart
 ```
 
 5. 客户端生成一对公钥密钥
 
+可能已经有该文件了，就不必再生成。
+
 ```shell
 ssh-keygen -t rsa
 ```
 
+6. 把公钥放到服务器上
+
 ```shell
-# 把公钥放到服务器上
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.134.129
 ```
 
 ```shell
-# 然后可以不输密码登录
-ssh root@192.168.134.129
+ssh-copy-id -i ~/.ssh/id_rsa.pub fujiawei@183.134.197.66 -p20000
+```
+
+然后可以不输密码登录
+
+```shell
+ssh root@192.168.199.196
+```
+
+```shell
+ssh fujiawei@183.134.197.66 -p20000
 ```
 
 ### 永久修改主机名
@@ -181,6 +202,9 @@ usermod -s `which bash`  root
 
 ```shell
 apt install git
+```
+
+```shell
 git --version
 ```
 
