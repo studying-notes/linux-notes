@@ -1,4 +1,23 @@
-# tail 命令
+---
+date: 2020-10-20T09:26:21+08:00  # 创建日期
+author: "Rustle Karl"  # 作者
+
+# 文章
+title: "tail 命令详解"  # 文章标题
+# description: "文章描述"
+url:  "posts/linux/cmd/tail"  # 设置网页永久链接
+tags: [ "linux", "cmd"]  # 标签
+series: [ "Linux 学习笔记"]  # 系列
+categories: [ "学习笔记"]  # 分类
+
+# 章节
+weight: 20 # 排序优先级
+chapter: false  # 设置为章节
+
+index: true  # 是否可以被索引
+toc: true  # 是否自动生成目录
+draft: false  # 草稿
+----
 
 > 默认打印每个文件的后 10 行到标准输出
 
@@ -31,13 +50,15 @@ tail [OPTION]... [FILE]...
 1. 输出文件后 20 行
 
 ```bash
-$ tail -n 20 FILE
+tail -n 20 FILE
 ```
 
 2. 持续刷新一个文件的内容
 
+> 用于浏览实时日志文件比较方便
+
 ```bash
-$ tail -f FILE
+tail -f FILE
 ```
 
 ## 相关命令
