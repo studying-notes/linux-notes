@@ -1,5 +1,11 @@
 # 系统变量
 
+- [系统变量](#系统变量)
+  - [概述](#概述)
+  - [命令执行过程](#命令执行过程)
+  - [最常见的几个环境变量](#最常见的几个环境变量)
+  - [重置 PATH](#重置-path)
+
 ## 概述
 
 **变量是计算机系统用于保存可变值的数据类型**。在 Linux 系统中，**变量名称一般都是大写的**，这是一种约定俗成的规范。我们可以直接通过变量名称来提取到对应的变量值。
@@ -64,3 +70,13 @@ $ echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile && source ~/.profile
 | EDITOR | 用户默认的文本编辑器 |
 
 Linux 作为一个多用户多任务的操作系统，能够为每个用户提供独立的、合适的工作运行环境，一个相同的变量可能会因为用户身份的不同而具有不同的值。
+
+## 重置 PATH
+
+```
+PATH=$(getconf PATH)
+```
+
+```
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/root/bin
+```

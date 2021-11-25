@@ -1,7 +1,13 @@
-# SSH 服务
+# 启用 SSH 服务
+
+- [启用 SSH 服务](#启用-ssh-服务)
+  - [配置网络服务](#配置网络服务)
+  - [远程控制服务](#远程控制服务)
+    - [配置 sshd 服务](#配置-sshd-服务)
+    - [安全密钥验证](#安全密钥验证)
+    - [远程传输命令](#远程传输命令)
 
 ## 配置网络服务
-
 
 ```bash
 $ ls /etc/sysconfig/network-scripts/ifcfg*
@@ -69,7 +75,7 @@ ssh-keygen -t rsa
 2. 把客户端主机中生成的公钥文件传送至远程主机
 
 ```bash
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@120.77.220.48
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@120.77.220.48 -p13002
 ```
 
 ### 远程传输命令
