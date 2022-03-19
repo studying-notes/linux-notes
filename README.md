@@ -1,37 +1,49 @@
+---
+date: 2022-03-19T18:47:48+08:00  # 创建日期
+author: "Rustle Karl"  # 作者
+
+# 文章
+title: "Linux 学习笔记"  # 文章标题
+description: "纸上得来终觉浅，学到过知识点分分钟忘得一干二净，今后无论学什么，都做好笔记吧。"
+url:  "posts/linux/README"  # 设置网页永久链接
+tags: [ "Linux", "README" ]  # 标签
+series: [ "Linux 学习笔记" ]  # 系列
+categories: [ "学习笔记" ]  # 分类
+
+index: true  # 是否可以被索引
+toc: true  # 是否自动生成目录
+draft: false  # 草稿
+---
+
 # Linux 学习笔记
 
-> 既然确定不了方向，那就学好永不过时的基础！
+> 纸上得来终觉浅，学到过知识点分分钟忘得一干二净，今后无论学什么，都做好笔记吧。
 
-## 预准备
+## 目录结构
 
-```bash
-$ cat /etc/centos-release
-CentOS Linux release 7.7.1908 (Core)
-```
+- `assets/images`: 笔记配图
+- `assets/templates`: 笔记模板
+- `docs`: 基础语法
+- `libraries`: 库
+  - `libraries/standard`: 标准库
+  - `libraries/tripartite`: 第三方库
+- `quickstart`: 基础用法
+- `src`: 源码示例
+  - `src/docs`: 基础语法源码示例
+  - `src/libraries/standard`: 标准库源码示例
+  - `src/libraries/tripartite`: 第三方库源码示例
+  - `src/quickstart`: 基础用法源码示例
 
-```bash
-$ cat /etc/redhat-release
-Red Hat Enterprise Linux Server release 7.0 (Maipo)
-```
+## 基础用法
 
-## 目录章节
+### 安装配置
 
-- 基础
-    - [Linux 的启动过程](基础/boot.md)
-    - [管道符与输入输出](基础/pipeline.md)
-    - [系统变量](基础/var.md)
-    - [Vim 编辑器入门](基础/vim.md)
-    - [Shell 脚本入门](基础/shell.md)
-    - [防火墙](基础/firewall.md)
-    - [LVM 磁盘阵列技术](基础/lvm.md)
-    - [挂载（Mount）文件系统（一）](基础/mount_1.md)
-    - [挂载（Mount）文件系统（二）](基础/mount_2.md)
-    - [RAID 磁盘阵列技术](基础/raid.md)
-    - [启用 SSH 服务](基础/ssh.md)
-    - [存储结构与磁盘划分](基础/storage.md)
-    - [用户与权限](基础/user.md)
-    - [虚拟文件系统（Virtual File System）](基础/vfs.md)
-    - [通配符](基础/wildcard.md)
-    - [Linux 执行命令](基础/process.md)
+- [Ubuntu 系统重装后的基本配置](quickstart/install/ubuntu_desktop.md)
 
-- [命令](命令/README.md)
+## 基础语法
+
+## 库
+
+## 标准库
+
+## 第三方库
