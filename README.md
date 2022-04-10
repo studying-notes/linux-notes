@@ -39,8 +39,11 @@ draft: false  # 草稿
 ### 安装配置
 
 - [Ubuntu 系统重装后的基本配置](quickstart/install/ubuntu_desktop.md)
+- [OpenSSH 教程](quickstart/openssh.md)
 
-## 基础语法
+## Linux网络编程
+
+-[第1章_Linux操作系统概述](docs/Linux网络编程/第1章_Linux操作系统概述.md)
 
 ## 库
 
