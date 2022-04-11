@@ -222,3 +222,36 @@ apt install -y open-vm-tools-desktop
 # Server
 apt install -y open-vm-tools
 ```
+
+## Xvfb 虚拟 X Server
+
+Xvfb 是一个 X server，主要用于在没有显示设备的主机上，进行拥有图形界面程序的运行。比如自动化测试。
+
+```shell
+sudo apt install xvfb
+```
+
+### 启动
+
+- 3: 虚拟屏幕 ID
+- 1336x768x24: 屏幕分辨率
+
+```shell
+Xvfb -ac :3 -screen 0 1336x768x24 > /dev/null 2>&1
+
+export DISPLAY=:3
+```
+
+## System Program Problem Detected 弹窗
+
+```shell
+sudo rm /var/crash/*
+```
+
+```shell
+sed -i /etc/default/apport
+```
+
+```shell
+sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
+```
