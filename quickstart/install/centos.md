@@ -5,7 +5,7 @@ author: "Rustle Karl"  # 作者
 # 文章
 title: "CentOS 系统重装后的基本配置"  # 文章标题
 description: "每次系统重装、更换新的系统/硬件，开发环境的重新搭建都是一个巨大的工程"
-url:  "posts/linux/config/centos"  # 设置网页链接，默认使用文件名
+url:  "posts/linux/quickstart/install/centos"  # 设置网页链接，默认使用文件名
 tags: [ "centos", "linux", "config"]  # 自定义标签
 series: [ "系统重装基础配置", "Linux 学习笔记" ]  # 文章主题/文章系列
 categories: [ "基础配置"]  # 文章分类
@@ -20,6 +20,12 @@ draft: false  # 草稿
 ---
 
 ## 联网
+
+wget -e http_proxy=192.168.10.138:8118 -e https_proxy=192.168.10.138:8118 https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+
+```shell
+curl -x 192.168.10.138:8118 https://www.google.com
+```
 
 ```shell
 sed -i 's/ONBOOT=no/ONBOOT=yes/g' /etc/sysconfig/network-scripts/ifcfg-ens33
@@ -59,6 +65,26 @@ systemctl start sshd
 systemctl restart sshd
 ```
 
+```shell
+ssh root@192.168.10.109
+ssh root@192.168.10.216
+ssh root@192.168.10.168
+ssh root@192.168.10.114
+ssh root@192.168.10.158
+ssh root@192.168.10.102
+ssh root@192.168.10.120
+ssh root@192.168.10.240
+ssh root@192.168.10.187
+ssh root@192.168.10.212
+```
+
+```shell
+cat >> /etc/hosts << EOF
+192.168.10.109 master
+192.168.10.216 node1
+EOF
+```
+
 配置开机自启
 
 ```shell
@@ -66,18 +92,23 @@ systemctl enable sshd
 ```
 
 ```shell
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.176.130
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.176.129
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.176.131
+ssh-keygen -t rsa
+```
 
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.10.101
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.10.184
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.10.148
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.10.215
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.10.202
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.10.119
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.10.195
+```shell
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.109
 
+ssh-copy-id -i ~/.ssh/id_rsa.pub  rustlekarl@macos
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.216
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.168
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.114
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.158
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.102
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.120
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.240
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.187
+ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.212
 ```
 
 ### 永久修改主机名
@@ -89,7 +120,7 @@ echo master > /etc/hostname
 ```
 
 ```shell
-echo node1 > /etc/hostname
+echo node9 > /etc/hostname && reboot now
 ```
 
 ```shell
@@ -131,20 +162,10 @@ yum install -y wget curl psmisc
 
 Setp 1. 添加源安装
 
-```shell
-cd /etc/yum.repos.d/
-```
-
-**CentOS 7**
+https://software.opensuse.org/download.html?project=shells%3Afish&package=fish
 
 ```shell
-wget http://download.opensuse.org/repositories/shells:fish:release:2/CentOS_7/shells:fish:release:2.repo
-```
-
-**CentOS 6**
-
-```shell
-wget https://download.opensuse.org/repositories/shells:fish:release:2/CentOS_6/shells:fish:release:2.repo
+cd /etc/yum.repos.d/ && wget https://download.opensuse.org/repositories/shells:fish/CentOS_7/shells:fish.repo
 ```
 
 ```shell
@@ -181,4 +202,14 @@ usermod -s `which fish`  root
 
 ```shell
 usermod -s `which bash`  root
+```
+
+### Python3 / Pip3
+
+```shell
+yum install python3 -y
+```
+
+```shell
+pip3 install toolkit-py -i https://pypi.douban.com/simple  # 个人工具包
 ```
