@@ -179,10 +179,30 @@ usermod -s `which fish`  root
 usermod -s `which bash`  root
 ```
 
+#### 切换主题
+
+```shell
+git config --global http.https://github.com.proxy 192.168.0.107:8118
+
+curl -x 192.168.0.107:8118 https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+omf install eclm
+omf theme eclm
+
+omf install batman
+omf theme batman
+
+omf install harleen
+omf theme harleen
+
+git config --global --unset http.https://github.com.proxy
+```
+
 ## WSL 默认 root
 
 ```shell
 ubuntu config --default-user root
+kali config --default-user root
 ```
 
 ```shell
