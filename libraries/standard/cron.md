@@ -2,15 +2,12 @@
 date: 2020-10-20T09:26:21+08:00  # 创建日期
 author: "Rustle Karl"  # 作者
 
-# 文章
 title: "Cron 表达式详解"  # 文章标题
-# description: "文章描述"
-url:  "posts/linux/docs/cron"  # 设置网页永久链接
+url:  "posts/linux/libraries/standard/cron"  # 设置网页永久链接
 tags: [ "linux", "cron"]  # 标签
 series: [ "Linux 学习笔记"]  # 系列
 categories: [ "学习笔记"]  # 分类
 
-# 章节
 weight: 20 # 排序优先级
 chapter: false  # 设置为章节
 
@@ -124,7 +121,7 @@ draft: false  # 草稿
 0 0/30 9-17 * * ?
 ```
 
-### 每天上午10点，下午2点，4点 
+### 每天上午10点，下午2点，4点
 
 ```shell
 0 0 10,14,16 * * ?

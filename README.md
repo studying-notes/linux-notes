@@ -50,4 +50,6 @@ draft: false  # 草稿
 
 ## 标准库
 
+- [Cron 表达式详解](libraries/standard/cron.md)
+
 ## 第三方库
