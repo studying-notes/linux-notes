@@ -46,6 +46,7 @@ draft: false  # 草稿
 - [第1章_Linux操作系统概述](docs/Linux网络编程/第1章_Linux操作系统概述.md)
 - [第2章_Linux编程环境](docs/Linux网络编程/第2章_Linux编程环境.md)
 - [第3章_文件系统简介](docs/Linux网络编程/第3章_文件系统简介.md)
+- [第4章_程序、进程和线程](docs/Linux网络编程/第4章_程序、进程和线程.md)
 
 ## 库
 
