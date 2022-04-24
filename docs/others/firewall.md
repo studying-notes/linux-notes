@@ -336,6 +336,10 @@ $ firewall-cmd --zone=public --list-ports
 8080-8081/tcp
 ```
 
+```bash
+sudo firewall-cmd --zone=public --add-port=13027-13027/tcp
+```
+
 把原本访问本机 888 端口的流量转发到 22 端口，要且求当前和长期均有效：
 
 ```bash

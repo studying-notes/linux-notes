@@ -3,6 +3,8 @@
 .idea/
 refs/
 
+__pycache__/
+
 ### C++ template
 # Prerequisites
 *.d
