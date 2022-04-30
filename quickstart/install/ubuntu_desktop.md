@@ -12,6 +12,23 @@ toc: true  # 目录
 draft: false  # 草稿
 ---
 
+- [更新系统](#更新系统)
+- [启用 SSH 登录 root](#启用-ssh-登录-root)
+- [换镜像源](#换镜像源)
+  - [Python3 / Pip3](#python3--pip3)
+- [时间同步](#时间同步)
+  - [永久修改主机名](#永久修改主机名)
+  - [不显示登录标语](#不显示登录标语)
+  - [安装 Fish 终端](#安装-fish-终端)
+    - [切换主题](#切换主题)
+- [WSL 默认 root](#wsl-默认-root)
+- [VMWare Tools](#vmware-tools)
+- [Xvfb 虚拟 X Server](#xvfb-虚拟-x-server)
+  - [启动](#启动)
+- [System Program Problem Detected 弹窗](#system-program-problem-detected-弹窗)
+- [桌面允许 root 登录](#桌面允许-root-登录)
+- [远程桌面](#远程桌面)
+
 ## 更新系统
 
 ```shell
@@ -77,7 +94,7 @@ ssh-keygen -t rsa
 ```shell
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.0.111 -p20000
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.0.111
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@master
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@ubuntu-amd64
 ```
 
 然后可以不输密码登录
@@ -127,7 +144,7 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' 
 ### 永久修改主机名
 
 ```shell
-echo ubuntu > /etc/hostname
+echo ubuntu-amd64 > /etc/hostname
 ```
 
 ```shell
@@ -254,4 +271,39 @@ sed -i /etc/default/apport
 
 ```shell
 sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
+```
+
+## 桌面允许 root 登录
+
+vim /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+
+```
+[Seat:*]
+user-session=ubuntu
+greeter-show-manual-login= true
+```
+
+以下两个文件注释掉不许 root 登录的判断
+
+```
+vim /etc/pam.d/gdm-autologin
+vim /etc/pam.d/gdm-password
+```
+
+然后重启。
+
+## 远程桌面
+
+```shell
+apt install -y tightvncserver xrdp
+```
+
+完成安装后，进入 Windows 的操作系统，打开 Windows 的远程桌面工具，输入 Ubuntu 系统的 IP 地址，就可以进行远程桌面的链接。
+
+链接成功后，选择 xorg，输入链接 Ubuntu 桌面的账号和密码，进入桌面后就可以开始远程管理控制远程的 Ubuntu 系统了。
+
+需要注意的是，远程桌面链接的账号默认需要 root 用户方可登陆，开启 root 的账号的方法，需要在 Ubuntu 的终端命令窗口下输入下面的指令。
+
+```shell
+passwd root
 ```
