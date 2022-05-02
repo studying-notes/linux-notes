@@ -41,6 +41,8 @@ draft: false  # 草稿
 - [Ubuntu 系统重装后的基本配置](quickstart/install/ubuntu_desktop.md)
 - [Ubuntu 安装 Nvidai 显卡驱动](quickstart/install/ubuntu_desktop_nvidia.md)
 - [OpenSSH 教程](quickstart/openssh.md)
+- [Fish Shell 安装与主题切换](quickstart/shell/fish.md)
+- [Ubuntu WSL 问题笔记](quickstart/install/ubuntu_wsl.md)
 
 ## Linux网络编程
 

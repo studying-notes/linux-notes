@@ -199,7 +199,7 @@ usermod -s `which bash`  root
 #### 切换主题
 
 ```shell
-git config --global http.https://github.com.proxy 192.168.0.107:8118
+git config --global http.https://github.com.proxy ubuntu-amd64:8118
 
 curl -x 192.168.0.107:8118 https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
