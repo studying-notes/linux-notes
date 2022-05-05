@@ -12,6 +12,20 @@ toc: true  # 目录
 draft: false  # 草稿
 ---
 
+## WSL1 转换为 WSL2
+
+```shell
+wsl.exe -l -v
+```
+
+```shell
+wsl.exe --set-default-version 2
+```
+
+```shell
+wsl.exe --set-version ubuntu 2
+```
+
 ## 修改 hostname
 
 > https://www.srccodes.com/change-hostname-ubuntu-microsoft-windows-subsystem-for-linux-wsl-wsl2-wsl-conf-unable-resolve-hosts-name-service-not-known-list-running-shutdown-vm-srccodes/
