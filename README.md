@@ -44,6 +44,10 @@ draft: false  # 草稿
 - [Fish Shell 安装与主题切换](quickstart/shell/fish.md)
 - [Ubuntu WSL 问题笔记](quickstart/install/ubuntu_wsl.md)
 
+### 常用软件
+
+- [proxychains 与 graftcp 原理对比](quickstart/software/proxychains_graftcp.md)
+
 ## Linux网络编程
 
 - [第1章_Linux操作系统概述](docs/Linux网络编程/第1章_Linux操作系统概述.md)
