@@ -63,6 +63,7 @@ draft: false  # 草稿
 - [export 在当前会话修改环境变量](tools/standard/export.md)
 - [fdisk 管理硬盘设备](tools/standard/fdisk.md)
 - [free 查询内存资源信息](tools/standard/free.md)
+- [grep 搜索匹配关键词](tools/standard/grep.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
