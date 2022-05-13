@@ -72,6 +72,7 @@ draft: false  # 草稿
 - [mkdir 创建目录](tools/standard/mkdir.md)
 - [mkfs 格式化硬盘，创建文件系统](tools/standard/mkfs.md)
 - [mv 移动，重命名](tools/standard/mv.md)
+- [passwd 修改用户名密码](tools/standard/passwd.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
