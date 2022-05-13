@@ -80,6 +80,7 @@ draft: false  # 草稿
 - [reboot 重启系统](tools/standard/reboot.md)
 - [rm 移除项目](tools/standard/rm.md)
 - [scp 在网络之间进行安全传输数据](tools/standard/scp.md)
+- [screen 命令行终端切换](tools/standard/screen.md)
 - [setsid 让进程在新的会话中运行](tools/standard/setsid.md)
 - [shutdown 关闭操作系统](tools/standard/shutdown.md)
 - [source 在当前终端执行来自一个文件的命令](tools/standard/source.md)
