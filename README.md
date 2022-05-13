@@ -87,6 +87,7 @@ draft: false  # 草稿
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [wget 非交互式网络下载器](tools/standard/wget.md)
 - [whereis 定位文件位置](tools/standard/whereis.md)
+- [which 定位可执行命令的位置](tools/standard/which.md)
 
 ### 常用软件
 
