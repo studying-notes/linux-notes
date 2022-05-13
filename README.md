@@ -51,6 +51,7 @@ draft: false  # 草稿
 - [alias 设置别名](tools/standard/alias.md)
 - [unalias 取消别名](tools/standard/unalias.md)
 - [cat 打印到标准输出](tools/standard/cat.md)
+- [cd 改变当前工作目录](tools/standard/cd.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
