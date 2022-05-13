@@ -24,15 +24,12 @@ draft: false  # 草稿
 - `assets/images`: 笔记配图
 - `assets/templates`: 笔记模板
 - `docs`: 基础语法
-- `libraries`: 库
-  - `libraries/standard`: 标准库
-  - `libraries/tripartite`: 第三方库
+- `tools`: 常用工具
+  - `tools/standard`: 标准常用工具
+  - `tools/tripartite`: 第三方常用工具
 - `quickstart`: 基础用法
 - `src`: 源码示例
   - `src/docs`: 基础语法源码示例
-  - `src/libraries/standard`: 标准库源码示例
-  - `src/libraries/tripartite`: 第三方库源码示例
-  - `src/quickstart`: 基础用法源码示例
 
 ## 基础用法
 
@@ -73,6 +70,7 @@ draft: false  # 草稿
 - [mkfs 格式化硬盘，创建文件系统](tools/standard/mkfs.md)
 - [mv 移动，重命名](tools/standard/mv.md)
 - [passwd 修改用户名密码](tools/standard/passwd.md)
+- [pidof 打印指定进程名称的全部 PID 值](tools/standard/pidof.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
