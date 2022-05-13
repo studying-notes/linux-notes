@@ -70,6 +70,7 @@ draft: false  # 草稿
 - [mkdir 创建目录](tools/standard/mkdir.md)
 - [mkfs 格式化硬盘，创建文件系统](tools/standard/mkfs.md)
 - [mv 移动，重命名](tools/standard/mv.md)
+- [nohup 以忽略挂起信号的方式运行程序](tools/standard/nohup.md)
 - [passwd 修改用户名密码](tools/standard/passwd.md)
 - [pidof 打印指定进程名称的全部 PID 值](tools/standard/pidof.md)
 - [poweroff 关闭操作系统，切断系统电源](tools/standard/poweroff.md)
