@@ -61,6 +61,7 @@ draft: false  # 草稿
 - [df 显示文件系统的信息](tools/standard/df.md)
 - [echo 在标准输出回显字符串](tools/standard/echo.md)
 - [export 在当前会话修改环境变量](tools/standard/export.md)
+- [fdisk 管理硬盘设备](tools/standard/fdisk.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
