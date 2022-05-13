@@ -49,6 +49,7 @@ draft: false  # 草稿
 - [alias 设置别名](tools/standard/alias.md)
 - [at 设置一次性定时执行任务](tools/standard/at.md)
 - [awk 文本处理](tools/standard/awk.md)
+- [chattr 设置文件的隐藏权限](tools/standard/chattr.md)
 - [unalias 取消别名](tools/standard/unalias.md)
 - [cat 打印到标准输出](tools/standard/cat.md)
 - [cd 改变当前工作目录](tools/standard/cd.md)
