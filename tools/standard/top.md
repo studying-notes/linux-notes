@@ -3,7 +3,7 @@ date: 2020-10-20T09:26:21+08:00  # 创建日期
 author: "Rustle Karl"  # 作者
 
 # 文章
-title: "top 命令详解"  # 文章标题
+title: "top 进程活动监视"  # 文章标题
 # description: "文章描述"
 url:  "posts/linux/tools/standard/top"  # 设置网页永久链接
 tags: [ "linux", "cmd" ]  # 标签

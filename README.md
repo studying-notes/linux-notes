@@ -48,7 +48,8 @@ draft: false  # 草稿
 
 ### 系统自带工具
 
-- [top 命令详解](tools/standard/top.md)
+- [top 进程活动监视](tools/standard/top.md)
+- [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
 
 ### 常用软件
