@@ -66,6 +66,7 @@ draft: false  # 草稿
 - [grep 搜索匹配关键词](tools/standard/grep.md)
 - [ifconfig 获取网卡配置与网络状态等信息](tools/standard/ifconfig.md)
 - [kill 终止进程](tools/standard/kill.md)
+- [killall 终止指定名称的全部进程](tools/standard/killall.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
