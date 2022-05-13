@@ -69,6 +69,7 @@ draft: false  # 草稿
 - [killall 终止指定名称的全部进程](tools/standard/killall.md)
 - [ls 列出目录下文件的权限和属性信息](tools/standard/ls.md)
 - [lsof 列出当前系统打开的文件](tools/standard/lsof.md)
+- [mkdir 创建目录](tools/standard/mkdir.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
