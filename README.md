@@ -80,6 +80,7 @@ draft: false  # 草稿
 - [shutdown 关闭操作系统](tools/standard/shutdown.md)
 - [source 在当前终端执行来自一个文件的命令](tools/standard/source.md)
 - [sudo 给普通用户提供额外的权限](tools/standard/sudo.md)
+- [tail 打印文件最后几行](tools/standard/tail.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
