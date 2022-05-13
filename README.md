@@ -78,6 +78,7 @@ draft: false  # 草稿
 - [rm 移除项目](tools/standard/rm.md)
 - [scp 在网络之间进行安全传输数据](tools/standard/scp.md)
 - [shutdown 关闭操作系统](tools/standard/shutdown.md)
+- [source 在当前终端执行来自一个文件的命令](tools/standard/source.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
