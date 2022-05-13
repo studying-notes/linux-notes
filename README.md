@@ -58,6 +58,7 @@ draft: false  # 草稿
 - [chsh 更改登录 Shell](tools/standard/chsh.md)
 - [cp 复制](tools/standard/cp.md)
 - [crontab 设置长期性计划任务](tools/standard/crontab.md)
+- [ctrlaltdel 设置组合键 `Ctrl+Alt+Del` 的功能](tools/standard/ctrlaltdel.md)
 - [date 打印或者设置系统日期和时间](tools/standard/date.md)
 - [dd 复制文件或转换文件](tools/standard/dd.md)
 - [df 显示文件系统的信息](tools/standard/df.md)
