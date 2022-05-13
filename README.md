@@ -85,7 +85,7 @@ draft: false  # 草稿
 - [touch 创建空白文件](tools/standard/touch.md)
 - [umount 卸载文件系统](tools/standard/umount.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
-- [Cron 表达式详解](libraries/standard/cron.md)
+- [wget 非交互式网络下载器](tools/standard/wget.md)
 
 ### 常用软件
 
