@@ -209,7 +209,7 @@ gcc hello.c
 ```
 
 ```shell
-$ ./a.out
+./a.out
 Hello, World!
 ```
 
@@ -1291,17 +1291,17 @@ set result = 6
 
 包含信息获取、断点设置、运行控制、程序加载等常用命令，这些函数可以进行调试时的程序控制、程序的参数设置等。
 
-| GDB 的命令 | 格式 | 含义 | 简写 |
-| --------- | --------- | --------- | --------- |
-| list | List[ 开始, 结束 ] | 列出文件的代码清单 | l |
-| print | Printf p | 打印变量内容 | p |
-| break | Break[ 行号\|函数名称 ] | 设置断点 | b |
-| continue | Continue[ 开始, 结束 ] | 继续运行 | c |
-| next | Next | 下一行 | n |
-| step | Step | 进入函数 | s |
-| display | Display param | 显示参数 | |
-| file | File path | 加载文件 | |
-| run | Run args | 运行程序 | r |
+| GDB 的命令 | 格式                    | 含义               | 简写 |
+| ---------- | ----------------------- | ------------------ | ---- |
+| list       | List[ 开始, 结束 ]      | 列出文件的代码清单 | l    |
+| print      | Printf p                | 打印变量内容       | p    |
+| break      | Break[ 行号\|函数名称 ] | 设置断点           | b    |
+| continue   | Continue[ 开始, 结束 ]  | 继续运行           | c    |
+| next       | Next                    | 下一行             | n    |
+| step       | Step                    | 进入函数           | s    |
+| display    | Display param           | 显示参数           |      |
+| file       | File path               | 加载文件           |      |
+| run        | Run args                | 运行程序           | r    |
 
 1. 执行程序
 
