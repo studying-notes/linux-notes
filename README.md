@@ -46,6 +46,7 @@ draft: false  # 草稿
 
 ### 系统自带工具
 
+- [at 设置一次性定时执行任务](tools/standard/at.md)
 - [alias 设置别名](tools/standard/alias.md)
 - [unalias 取消别名](tools/standard/unalias.md)
 - [cat 打印到标准输出](tools/standard/cat.md)
