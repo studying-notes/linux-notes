@@ -53,6 +53,7 @@ draft: false  # 草稿
 - [cat 打印到标准输出](tools/standard/cat.md)
 - [cd 改变当前工作目录](tools/standard/cd.md)
 - [chmod 设置文件或目录的权限](tools/standard/chmod.md)
+- [chsh 更改登录 Shell](tools/standard/chsh.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
