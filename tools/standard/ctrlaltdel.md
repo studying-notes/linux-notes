@@ -5,7 +5,7 @@ author: "Rustle Karl"  # 作者
 # 文章
 title: "ctrlaltdel 设置组合键 `Ctrl+Alt+Del` 的功能"  # 文章标题
 # description: "文章描述"
-url:  "posts/linux/tools/standard/chown"  # 设置网页永久链接
+url:  "posts/linux/tools/standard/ctrlaltdel"  # 设置网页永久链接
 tags: [ "linux", "cmd" ]  # 标签
 series: [ "Linux 学习笔记" ]  # 系列
 categories: [ "学习笔记" ]  # 分类
