@@ -105,6 +105,10 @@ draft: false  # 草稿
 - [which 定位可执行命令的位置](tools/standard/which.md)
 - [who 显示当前用户名及其启动的终端信息](tools/standard/who.md)
 
+### 第三方工具
+
+- [hdparm 硬盘测试](tools/tripartite/hdparm.md)
+
 ### 常用软件
 
 - [proxychains 与 graftcp 原理对比](quickstart/software/proxychains_graftcp.md)
