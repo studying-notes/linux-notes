@@ -56,6 +56,7 @@ draft: false  # 草稿
 - [chsh 更改登录 Shell](tools/standard/chsh.md)
 - [cp 复制](tools/standard/cp.md)
 - [crontab 设置长期性计划任务](tools/standard/crontab.md)
+- [date 打印或者设置系统日期和时间](tools/standard/date.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
