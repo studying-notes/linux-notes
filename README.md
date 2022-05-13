@@ -40,6 +40,7 @@ draft: false  # 草稿
 - [OpenSSH 教程](quickstart/openssh.md)
 - [Fish Shell 安装与主题切换](quickstart/shell/fish.md)
 - [Ubuntu WSL 问题笔记](quickstart/install/ubuntu_wsl.md)
+- [Kali Linux WSL 问题笔记](quickstart/install/kali_wsl.md)
 
 ## 常用工具
 
