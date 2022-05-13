@@ -100,6 +100,7 @@ draft: false  # 草稿
 ### 常用软件
 
 - [proxychains 与 graftcp 原理对比](quickstart/software/proxychains_graftcp.md)
+- [root 用户启动 google chrome](quickstart/software/google-chrome.md)
 
 ## Linux网络编程
 
