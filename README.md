@@ -44,6 +44,13 @@ draft: false  # 草稿
 - [Fish Shell 安装与主题切换](quickstart/shell/fish.md)
 - [Ubuntu WSL 问题笔记](quickstart/install/ubuntu_wsl.md)
 
+## 常用工具
+
+### 系统自带工具
+
+- [top 命令详解](tools/standard/top.md)
+- [Cron 表达式详解](libraries/standard/cron.md)
+
 ### 常用软件
 
 - [proxychains 与 graftcp 原理对比](quickstart/software/proxychains_graftcp.md)
@@ -61,11 +68,3 @@ draft: false  # 草稿
 - [第10章_基于UDP协议的接收和发送](docs/Linux网络编程/第10章_基于UDP协议的接收和发送.md)
 - [第11章_高级套接字](docs/Linux网络编程/第11章_高级套接字.md)
 - [第15章_IPv6简介](docs/Linux网络编程/第15章_IPv6简介.md)
-
-## 库
-
-## 标准库
-
-- [Cron 表达式详解](libraries/standard/cron.md)
-
-## 第三方库
