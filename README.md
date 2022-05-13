@@ -59,6 +59,7 @@ draft: false  # 草稿
 - [date 打印或者设置系统日期和时间](tools/standard/date.md)
 - [dd 复制文件或转换文件](tools/standard/dd.md)
 - [df 显示文件系统的信息](tools/standard/df.md)
+- [echo 在标准输出回显字符串](tools/standard/echo.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
