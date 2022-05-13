@@ -48,6 +48,7 @@ draft: false  # 草稿
 
 ### 系统自带工具
 
+- [alias 设置别名](tools/standard/alias.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
