@@ -82,6 +82,7 @@ draft: false  # 草稿
 - [sudo 给普通用户提供额外的权限](tools/standard/sudo.md)
 - [tail 打印文件最后几行](tools/standard/tail.md)
 - [top 进程活动监视](tools/standard/top.md)
+- [touch 创建空白文件](tools/standard/touch.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
 
