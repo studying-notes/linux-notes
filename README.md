@@ -88,6 +88,7 @@ draft: false  # 草稿
 - [wget 非交互式网络下载器](tools/standard/wget.md)
 - [whereis 定位文件位置](tools/standard/whereis.md)
 - [which 定位可执行命令的位置](tools/standard/which.md)
+- [who 显示当前用户名及其启动的终端信息](tools/standard/who.md)
 
 ### 常用软件
 
