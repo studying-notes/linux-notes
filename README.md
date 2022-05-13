@@ -86,6 +86,7 @@ draft: false  # 草稿
 - [source 在当前终端执行来自一个文件的命令](tools/standard/source.md)
 - [sudo 给普通用户提供额外的权限](tools/standard/sudo.md)
 - [tail 打印文件最后几行](tools/standard/tail.md)
+- [tmux 运行多个终端会话](tools/standard/tmux.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [touch 创建空白文件](tools/standard/touch.md)
 - [umount 卸载文件系统](tools/standard/umount.md)
