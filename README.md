@@ -67,6 +67,7 @@ draft: false  # 草稿
 - [ifconfig 获取网卡配置与网络状态等信息](tools/standard/ifconfig.md)
 - [kill 终止进程](tools/standard/kill.md)
 - [killall 终止指定名称的全部进程](tools/standard/killall.md)
+- [ls 列出目录下文件的权限和属性信息](tools/standard/ls.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
