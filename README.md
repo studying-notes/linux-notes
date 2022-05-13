@@ -72,6 +72,7 @@ draft: false  # 草稿
 - [passwd 修改用户名密码](tools/standard/passwd.md)
 - [pidof 打印指定进程名称的全部 PID 值](tools/standard/pidof.md)
 - [poweroff 关闭操作系统，切断系统电源](tools/standard/poweroff.md)
+- [ps 显示系统进程状态](tools/standard/ps.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
