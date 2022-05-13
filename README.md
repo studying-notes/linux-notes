@@ -63,6 +63,7 @@ draft: false  # 草稿
 - [date 打印或者设置系统日期和时间](tools/standard/date.md)
 - [dd 复制文件或转换文件](tools/standard/dd.md)
 - [df 显示文件系统的信息](tools/standard/df.md)
+- [diff 按行比较多个文本文件的内容差异](tools/standard/diff.md)
 - [disown 从作业中移除](tools/standard/disown.md)
 - [echo 在标准输出回显字符串](tools/standard/echo.md)
 - [export 在当前会话修改环境变量](tools/standard/export.md)
