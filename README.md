@@ -75,6 +75,7 @@ draft: false  # 草稿
 - [ps 显示系统进程状态](tools/standard/ps.md)
 - [pwd 输出当前工作目录](tools/standard/pwd.md)
 - [reboot 重启系统](tools/standard/reboot.md)
+- [rm 移除项目](tools/standard/rm.md)
 - [top 进程活动监视](tools/standard/top.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [Cron 表达式详解](libraries/standard/cron.md)
