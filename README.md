@@ -54,6 +54,7 @@ draft: false  # 草稿
 - [cat 打印到标准输出](tools/standard/cat.md)
 - [cd 改变当前工作目录](tools/standard/cd.md)
 - [chmod 设置文件或目录的权限](tools/standard/chmod.md)
+- [chown 设置文件或目录的所有者和所属组](tools/standard/chown.md)
 - [chsh 更改登录 Shell](tools/standard/chsh.md)
 - [cp 复制](tools/standard/cp.md)
 - [crontab 设置长期性计划任务](tools/standard/crontab.md)
