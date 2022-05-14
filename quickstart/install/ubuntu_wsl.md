@@ -12,6 +12,28 @@ toc: true  # 目录
 draft: false  # 草稿
 ---
 
+## 系统更新
+
+```shell
+sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
+sudo sed -i 's/mirrors.ustc.edu.cn/archive.ubuntu.com/g' /etc/apt/sources.list
+
+apt update && apt upgrade -y
+```
+
+## WSL 默认 root
+
+```shell
+ubuntu config --default-user root
+
+kali config --default-user root
+```
+
+```shell
+ubuntu2004 config --default-user root
+```
+
 ## WSL1 转换为 WSL2
 
 ```shell
@@ -34,11 +56,19 @@ wsl.exe --set-version ubuntu 2
 
 ```shell
 vim /etc/wsl.conf
+
+vi /etc/wsl.conf
 ```
 
 ```shell
 [network]
 hostname = ubuntu-wsl
+generateHosts = false
+```
+
+```shell
+[network]
+hostname = kali-wsl
 generateHosts = false
 ```
 
@@ -49,7 +79,7 @@ wsl --shutdown
 ## 升级大版本
 
 ```shell
-apt update && apt upgrade -y && apt --purge autoremove
+apt update && apt upgrade -y
 ```
 
 do-release-upgrade 指令可以帮助我们升级 Ubuntu 版本，但是如果直接运行，会提醒没有更新的版本，这时我们就需要

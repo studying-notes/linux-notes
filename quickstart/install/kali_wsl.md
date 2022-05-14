@@ -17,10 +17,14 @@ WSL 2 、修改主机名等通用问题参考 Ubuntu。
 ## 基本工具集
 
 ```shell
-apt install kali-linux-default
+apt update && apt upgrade -y
+
+apt install -y kali-linux-default
 ```
 
 ## 官方桌面
+
+> 用处不大
 
 ```shell
 apt install kali-win-kex
