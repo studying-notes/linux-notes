@@ -35,6 +35,10 @@ draft: false  # 草稿
 
 ### 安装配置
 
+```
+cinst rufus
+```
+
 - [Ubuntu 系统重装后的基本配置](quickstart/install/ubuntu_desktop.md)
 - [Ubuntu 安装 Nvidai 显卡驱动](quickstart/install/ubuntu_desktop_nvidia.md)
 - [OpenSSH 教程](quickstart/openssh.md)
@@ -108,6 +112,7 @@ draft: false  # 草稿
 ### 第三方工具
 
 - [hdparm 硬盘测试](tools/tripartite/hdparm.md)
+- [rsync 同步文件](tools/tripartite/rsync.md)
 
 ### 常用软件
 
