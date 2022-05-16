@@ -70,6 +70,7 @@ cinst rufus
 - [diff 按行比较多个文本文件的内容差异](tools/standard/diff.md)
 - [disown 从作业中移除](tools/standard/disown.md)
 - [du 查看磁盘使用情况](tools/standard/du.md)
+- [e2fsck 检查文件系统的完整性](tools/standard/e2fsck.md)
 - [echo 在标准输出回显字符串](tools/standard/echo.md)
 - [export 在当前会话修改环境变量](tools/standard/export.md)
 - [fdisk 管理硬盘设备](tools/standard/fdisk.md)
