@@ -115,6 +115,7 @@ cinst rufus
 - [top 进程活动监视](tools/standard/top.md)
 - [touch 创建空白文件](tools/standard/touch.md)
 - [umount 卸载文件系统](tools/standard/umount.md)
+- [userdel 删除用户](tools/standard/userdel.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [usermod 修改用户的属性](tools/standard/usermod.md)
 - [wget 非交互式网络下载器](tools/standard/wget.md)
