@@ -117,6 +117,7 @@ cinst rufus
 - [umount 卸载文件系统](tools/standard/umount.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [wget 非交互式网络下载器](tools/standard/wget.md)
+- [wc 统计指定文本的行数、单词数、字符数、字节数等](tools/standard/wc.md)
 - [whereis 定位文件位置](tools/standard/whereis.md)
 - [which 定位可执行命令的位置](tools/standard/which.md)
 - [who 显示当前用户名及其启动的终端信息](tools/standard/who.md)
