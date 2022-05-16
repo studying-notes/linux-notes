@@ -118,6 +118,7 @@ cinst rufus
 - [userdel 删除用户](tools/standard/userdel.md)
 - [su 切换用户](tools/standard/su.md)
 - [stat 查询文件、文件系统状态信息](tools/standard/stat.md)
+- [sed 文本编辑](tools/standard/sed.md)
 - [swapon 挂载 swap 分区](tools/standard/swapon.md)
 - [setfacl 管理文件的 ACL 规则](tools/standard/setfacl.md)
 - [tr 字符替换](tools/standard/tr.md)
