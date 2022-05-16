@@ -93,6 +93,7 @@ cinst rufus
 - [lsattr 显示文件的隐藏权限](tools/standard/lsattr.md)
 - [ls 列出目录下文件的权限和属性信息](tools/standard/ls.md)
 - [lsof 列出当前系统打开的文件](tools/standard/lsof.md)
+- [mount 挂载文件系统](tools/standard/mount.md)
 - [mkdir 创建目录](tools/standard/mkdir.md)
 - [mkfs 格式化硬盘，创建文件系统](tools/standard/mkfs.md)
 - [mv 移动，重命名](tools/standard/mv.md)
