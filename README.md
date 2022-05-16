@@ -79,6 +79,7 @@ cinst rufus
 - [find 按照指定条件查找文件](tools/standard/find.md)
 - [getfacl 显示文件上设置的 ACL 信息](tools/standard/getfacl.md)
 - [groupadd 创建新的用户组](tools/standard/groupadd.md)
+- [halt 中断系统](tools/standard/halt.md)
 - [free 查询内存资源信息](tools/standard/free.md)
 - [grep 搜索匹配关键词](tools/standard/grep.md)
 - [ifconfig 获取网卡配置与网络状态等信息](tools/standard/ifconfig.md)
