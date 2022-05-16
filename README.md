@@ -76,6 +76,7 @@ cinst rufus
 - [export 在当前会话修改环境变量](tools/standard/export.md)
 - [fdisk 管理硬盘设备](tools/standard/fdisk.md)
 - [file 确定文件类型](tools/standard/file.md)
+- [find 按照指定条件查找文件](tools/standard/find.md)
 - [free 查询内存资源信息](tools/standard/free.md)
 - [grep 搜索匹配关键词](tools/standard/grep.md)
 - [ifconfig 获取网卡配置与网络状态等信息](tools/standard/ifconfig.md)
