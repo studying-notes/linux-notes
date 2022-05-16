@@ -72,6 +72,7 @@ cinst rufus
 - [du 查看磁盘使用情况](tools/standard/du.md)
 - [e2fsck 检查文件系统的完整性](tools/standard/e2fsck.md)
 - [echo 在标准输出回显字符串](tools/standard/echo.md)
+- [edquota 编辑用户的 quota 配额限制](tools/standard/edquota.md)
 - [export 在当前会话修改环境变量](tools/standard/export.md)
 - [fdisk 管理硬盘设备](tools/standard/fdisk.md)
 - [free 查询内存资源信息](tools/standard/free.md)
