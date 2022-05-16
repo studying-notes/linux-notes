@@ -116,6 +116,7 @@ cinst rufus
 - [touch 创建空白文件](tools/standard/touch.md)
 - [umount 卸载文件系统](tools/standard/umount.md)
 - [userdel 删除用户](tools/standard/userdel.md)
+- [swapon 挂载 swap 分区](tools/standard/swapon.md)
 - [tr 字符替换](tools/standard/tr.md)
 - [tar 对文件进行打包压缩或解压](tools/standard/tar.md)
 - [useradd 创建新的用户](tools/standard/useradd.md)
