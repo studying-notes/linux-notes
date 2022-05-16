@@ -116,6 +116,7 @@ cinst rufus
 - [touch 创建空白文件](tools/standard/touch.md)
 - [umount 卸载文件系统](tools/standard/umount.md)
 - [userdel 删除用户](tools/standard/userdel.md)
+- [tr 字符替换](tools/standard/tr.md)
 - [useradd 创建新的用户](tools/standard/useradd.md)
 - [uptime 查询系统负载信息](tools/standard/uptime.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
