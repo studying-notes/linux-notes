@@ -117,6 +117,7 @@ cinst rufus
 - [umount 卸载文件系统](tools/standard/umount.md)
 - [userdel 删除用户](tools/standard/userdel.md)
 - [useradd 创建新的用户](tools/standard/useradd.md)
+- [uptime 查询系统负载信息](tools/standard/uptime.md)
 - [uname 获取当前系统信息](tools/standard/uname.md)
 - [usermod 修改用户的属性](tools/standard/usermod.md)
 - [wget 非交互式网络下载器](tools/standard/wget.md)
