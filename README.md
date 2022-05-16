@@ -89,6 +89,7 @@ cinst rufus
 - [kill 终止进程](tools/standard/kill.md)
 - [killall 终止指定名称的全部进程](tools/standard/killall.md)
 - [ln 创建链接文件](tools/standard/ln.md)
+- [last 显示用户的登录日志](tools/standard/last.md)
 - [ls 列出目录下文件的权限和属性信息](tools/standard/ls.md)
 - [lsof 列出当前系统打开的文件](tools/standard/lsof.md)
 - [mkdir 创建目录](tools/standard/mkdir.md)
