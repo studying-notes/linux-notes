@@ -122,6 +122,7 @@ cinst rufus
 - [read 从标准输入读取一行，依次赋值](tools/standard/read.md)
 - [swapon 挂载 swap 分区](tools/standard/swapon.md)
 - [setfacl 管理文件的 ACL 规则](tools/standard/setfacl.md)
+- [partprobe 通知操作系统分区表的更改](tools/standard/partprobe.md)
 - [tr 字符替换](tools/standard/tr.md)
 - [tar 对文件进行打包压缩或解压](tools/standard/tar.md)
 - [pvcreate 初始化供 LVM 使用的物理卷](tools/standard/pvcreate.md)
