@@ -4,7 +4,7 @@ author: "Rustle Karl"  # 作者
 
 # 文章
 title: "Linux 的启动过程"  # 文章标题
-url:  "posts/linux/abc/boot"  # 设置网页永久链接
+url:  "posts/linux/docs/base/boot"  # 设置网页永久链接
 tags: [ "linux" ]  # 标签
 series: [ "Linux 学习笔记"]  # 系列
 categories: [ "学习笔记"]  # 分类

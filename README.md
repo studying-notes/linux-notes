@@ -33,6 +33,7 @@ draft: false  # 草稿
 
 ## 基础知识
 
+- [Linux 的启动过程](docs/base/boot.md)
 - [Shell 脚本基础语法](docs/base/shell_script.md)
 
 ## 基础用法
