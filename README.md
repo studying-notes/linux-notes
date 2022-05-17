@@ -90,6 +90,7 @@ cinst rufus
 - [killall 终止指定名称的全部进程](tools/standard/killall.md)
 - [ln 创建链接文件](tools/standard/ln.md)
 - [last 显示用户的登录日志](tools/standard/last.md)
+- [lsblk 列出块设备信息](tools/standard/lsblk.md)
 - [lsattr 显示文件的隐藏权限](tools/standard/lsattr.md)
 - [ls 列出目录下文件的权限和属性信息](tools/standard/ls.md)
 - [lsof 列出当前系统打开的文件](tools/standard/lsof.md)
