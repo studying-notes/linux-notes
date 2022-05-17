@@ -43,9 +43,9 @@ df [OPTION]... [FILE]...
 | -P, --portability | use the POSIX output format |
 | --sync | invoke sync before getting usage info |
 | --total | elide all entries insignificant to available space, and produce a grand total |
-| -t, --type = TYPE | limit listing to file systems of type TYPE |
-| -T, --print-type | print file system type |
-| -x, --exclude-type = TYPE | limit listing to file systems not of type TYPE |
+| -t, --type = TYPE | 指定文件系统类型 |
+| -T, --print-type | 输出文件系统类型 |
+| -x, --exclude-type = TYPE | 排除指定文件系统类型 |
 | -v | (ignored) |
 | --help | display this help and exit |
 | --version | output version information and exit |
@@ -74,6 +74,12 @@ tmpfs            99M     0   99M   0% /run/user/0
 
 ```shell
 df -T -h
+```
+
+### 指定文件系统
+
+```shell
+df -T -h -t tmpfs
 ```
 
 ### 排除干扰文件系统
