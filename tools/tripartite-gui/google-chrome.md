@@ -3,7 +3,7 @@ date: 2022-05-08T10:01:38+08:00
 author: "Rustle Karl"
 
 title: "root 用户启动 google chrome"
-url:  "posts/linux/quickstart/software/google-chrome"  # 永久链接
+url:  "posts/linux/tools/tripartite-gui/google-chrome"  # 永久链接
 tags: [ "Linux" ]  # 标签
 series: [ "Linux 学习笔记" ]  # 系列
 categories: [ "学习笔记" ]  # 分类

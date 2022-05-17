@@ -3,7 +3,7 @@ date: 2022-05-09T00:45:32+08:00
 author: "Rustle Karl"
 
 title: "proxychains 与 graftcp 原理对比"
-url:  "posts/linux/quickstart/software/proxychains_graftcp"  # 永久链接
+url:  "posts/linux/tools/tripartite-gui/proxychains_graftcp"  # 永久链接
 tags: [ "Linux" ]  # 标签
 series: [ "Linux 学习笔记" ]  # 系列
 categories: [ "学习笔记" ]  # 分类
