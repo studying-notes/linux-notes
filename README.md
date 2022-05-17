@@ -31,6 +31,10 @@ draft: false  # 草稿
 - `src`: 源码示例
   - `src/docs`: 基础语法源码示例
 
+## 基础知识
+
+- [Shell 脚本基础语法](docs/base/shell_script.md)
+
 ## 基础用法
 
 - [Linux CPU 性能测试](quickstart/bench.md)
