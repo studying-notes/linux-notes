@@ -28,6 +28,8 @@ draft: false  # 草稿
 - [System Program Problem Detected 弹窗](#system-program-problem-detected-弹窗)
 - [桌面允许 root 登录](#桌面允许-root-登录)
 - [远程桌面](#远程桌面)
+- [安装 Docker](#安装-docker)
+- [安装 OneDrive](#安装-onedrive)
 
 ## 更新系统
 
@@ -39,6 +41,12 @@ apt update
 
 ```shell
 apt upgrade -y
+```
+
+一行命令：
+
+```shell
+apt update && apt upgrade -y
 ```
 
 ## 启用 SSH 登录 root
@@ -172,10 +180,14 @@ apt install -y fish
 
 Setp 2. 去掉欢迎语句
 
+```shell
+fish -c "set -U fish_greeting"
+```
+
 需进入 Fish 中设置才能生效。
 
 ```shell
-set fish_greeting
+set -U fish_greeting
 ```
 
 Setp 3. 设置别名，自定义变量
@@ -307,3 +319,11 @@ apt install -y tightvncserver xrdp
 ```shell
 passwd root
 ```
+
+## 安装 Docker
+
+见树莓派笔记。
+
+## 安装 OneDrive
+
+见树莓派笔记。
