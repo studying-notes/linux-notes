@@ -21,6 +21,8 @@ draft: false  # 草稿
 
 > 格式化硬盘，创建文件系统
 
+**mkfs命令** 用于在设备上（通常为硬盘）创建 Linux 文件系统。mkfs 本身并不执行建立文件系统的工作，而是去调用相关的程序来执行。
+
 ## 格式
 
 ```bash
@@ -31,11 +33,11 @@ mkfs [options] [-t <type>] [fs-options] <device> [<size>]
 
 | 参数 | 作用 |
 | -------- | -------- |
-| -t, --type = `<type>` | filesystem type ; when unspecified, ext2 is used |
-| fs-options | parameters for the real filesystem builder |
-| `<device>` | path to the device to be used |
-| `<size>` | number of blocks to be used on the device |
-| -V, --verbose | explain what is being done ; specifying -V more than once will cause a dry-run |
+| -t, --type = `<type>` | 指定要建立何种文件系统，默认 ext2 |
+| fs-options | 指定建立文件系统时的参数 |
+| `<device>` | 指定要创建的文件系统对应的设备文件名 |
+| `<size>` | 指定文件系统的磁盘块数 |
+| -v, --verbose | explain what is being done ; specifying -V more than once will cause a dry-run |
 | -h, --help | display this help |
 | -V, --version | display version |
 
@@ -55,3 +57,5 @@ mkfs.btrfs   mkfs.ext3    mkfs.minix   mkfs.vfat
 ```bash
 mkfs.xfs /dev/sdb1
 ```
+
+不指定相关参数会以交互方式进行。
