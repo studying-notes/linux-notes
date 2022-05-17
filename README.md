@@ -33,6 +33,8 @@ draft: false  # 草稿
 
 ## 基础用法
 
+- [Linux CPU 性能测试](quickstart/bench.md)
+
 ### 安装配置
 
 ```
