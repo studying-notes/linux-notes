@@ -35,6 +35,7 @@ draft: false  # 草稿
 
 - [Linux 的启动过程](docs/base/boot.md)
 - [Shell 脚本基础语法](docs/base/shell_script.md)
+- [pipeline 管道符与输入输出](docs/base/pipeline.md)
 
 ## 基础用法
 
