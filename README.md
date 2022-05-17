@@ -155,6 +155,7 @@ cinst rufus
 - [iostat 监视系统输入输出设备和 CPU 的使用情况](tools/tripartite/iostat.md)
 - [rsync 同步文件](tools/tripartite/rsync.md)
 - [vim 文本编辑器](tools/tripartite/vim.md)
+- [htop 动态观察系统进程状况](tools/tripartite/htop.md)
 
 - [root 用户启动 google chrome](tools/tripartite-gui/google-chrome.md)
 - [proxychains 与 graftcp 原理对比](tools/tripartite-gui/proxychains_graftcp.md)
