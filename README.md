@@ -150,6 +150,7 @@ cinst rufus
 
 ### 第三方工具
 
+- [ab 服务器性能测试工具](tools/tripartite/ab.md)
 - [hdparm 硬盘测试](tools/tripartite/hdparm.md)
 - [iotop 监视磁盘I/O使用状况的工具](tools/tripartite/iotop.md)
 - [iostat 监视系统输入输出设备和 CPU 的使用情况](tools/tripartite/iostat.md)
