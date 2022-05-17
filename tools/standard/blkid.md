@@ -18,7 +18,7 @@ draft: false  # 草稿
 
 在 Linux 下可以使用 **blkid命令** 对查询设备上所采用文件系统类型进行查询。blkid 主要用来对系统的块设备（包括交换分区）所使用的文件系统类型、LABEL、UUID 等信息进行查询。要使用这个命令必须安装 e2fsprogs 软件包。
 
-###  语法
+### 语法
 
 ```shell
 blkid -L | -U
@@ -27,7 +27,7 @@ blkid -p [-s ] [-O ] [-S ][-o] ...
 blkid -i [-s ] [-o] ...
 ```
 
-###  选项
+### 选项
 
 ```shell
 -c <file>   # 指定cache文件(default: /etc/blkid.tab, /dev/null = none)
@@ -53,7 +53,7 @@ Low-level probing options:
 -n <list>   # filter by filesystem type (e.g. -n vfat,ext3)
 ```
 
-###  实例
+### 实例
 
 1、列出当前系统中所有已挂载文件系统的类型：
 

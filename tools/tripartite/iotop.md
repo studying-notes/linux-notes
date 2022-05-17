@@ -20,7 +20,7 @@ Linux 下的 IO 统计工具如 iostat，nmon 等大多数是只能统计到 per
 
 iotop 使用 Python 语言编写而成，要求 Python2.5（及以上版本）和 Linux kernel2.6.20（及以上版本）。iotop 提供有源代码及 rpm 包，可从其官方主页下载。
 
-##  安装
+## 安装
 
 ### Ubuntu
 
@@ -45,13 +45,13 @@ python setup.py build
 python setup.py install
 ```
 
-##  语法
+## 语法
 
 ```shell
 iotop（选项）
 ```
 
-##  选项
+## 选项
 
 ```shell
 -o：只显示有io操作的进程
@@ -71,7 +71,7 @@ iotop（选项）
 5.  a：显示累积使用量。
 6.  q：退出。
 
-##  实例
+## 实例
 
 直接执行 iotop 就可以看到效果了：
 
