@@ -75,3 +75,9 @@ tmpfs            99M     0   99M   0% /run/user/0
 ```shell
 df -T -h
 ```
+
+### 排除干扰文件系统
+
+```shell
+df -T -h -x overlay -x tmpfs
+```
