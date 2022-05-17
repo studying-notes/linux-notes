@@ -142,6 +142,7 @@ cinst rufus
 ### 第三方工具
 
 - [hdparm 硬盘测试](tools/tripartite/hdparm.md)
+- [iotop 监视磁盘I/O使用状况的工具](tools/tripartite/iotop.md)
 - [rsync 同步文件](tools/tripartite/rsync.md)
 
 ### 常用软件
