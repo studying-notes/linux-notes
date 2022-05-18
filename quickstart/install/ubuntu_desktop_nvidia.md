@@ -12,6 +12,8 @@ toc: true  # 目录
 draft: false  # 草稿
 ---
 
+## 安装
+
 ```shell
 sudo apt update && sudo apt upgrade -y
 ```
@@ -28,14 +30,27 @@ sudo ubuntu-drivers autoinstall
 reboot
 ```
 
+## 显示版本
+
 ```shell
 nvidia-smi
 ```
+
+## 设置
 
 ```shell
 nvidia-settings
 ```
 
-```shell
+## 无法自动更新提示
 
+```
+22 updates could not be installed automatically. For more details,
+see /var/log/unattended-upgrades/unattended-upgrades.log
+```
+
+删除下面这个文件可以阻止提示：
+
+```shell
+rm /var/lib/unattended-upgrades/kept-back
 ```
