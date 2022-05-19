@@ -38,6 +38,8 @@ opkg list-upgradable # 列出可用软件包
 
 ### 升级全部可更新包
 
+一次次重装的教训：除非是原版系统，否则不要这样做。一般能用就没必要更新软件。
+
 ```
 opkg list-upgradable | cut -f 1 -d ' ' | xargs -r opkg upgrade
 ```
