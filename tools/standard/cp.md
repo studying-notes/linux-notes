@@ -19,7 +19,9 @@ toc: true  # 是否自动生成目录
 draft: false  # 草稿
 ----
 
-> 复制
+> 将源文件或目录复制到目标文件或目录中
+
+**cp 命令** 用来将一个或多个源文件或者目录复制到指定的目的文件或目录。它可以将单个源文件复制成一个指定文件名的具体的文件或一个已经存在的目录下。cp 命令还支持同时复制多个文件，当一次复制多个文件时，目标文件参数必须是一个已经存在的目录，否则将出现错误。
 
 建议：
 
@@ -37,43 +39,27 @@ cp [OPTION]... SOURCE... DIRECTORY
 cp [OPTION]... -t DIRECTORY SOURCE...
 ```
 
-## 参数
+## 选项 
 
-| 参数 | 作用 |
-| -------------------- | -------------------- |
-| -a, --archive | same as -dR --preserve = all |
-| --attributes-only | don't copy the file data, just the attributes |
-| --backup[ = CONTROL] | make a backup of each existing destination file |
-| -b | like --backup but does not accept an argument |
-| --copy-contents | copy contents of special files when recursive |
-| -d | same as --no-dereference --preserve = links |
-| -f, --force | if an existing destination file cannot be opened, remove it and try again (this option is ignored when the -n option is also used) |
-| -i, --interactive | prompt before overwrite (overrides a previous -n option) |
-| -H | follow command-line symbolic links in SOURCE |
-| -l, --link | hard link files instead of copying |
-| -L, --dereference | always follow symbolic links in SOURCE |
-| -n, --no-clobber | do not overwrite an existing file (overrides a previous -i option) |
-| -P, --no-dereference | never follow symbolic links in SOURCE |
-| -p | same as --preserve = mode,ownership,timestamps |
-| --preserve[ = ATTR_LIST] | preserve the specified attributes (default: mode,ownership,timestamps), if possible additional attributes: context, links, xattr, all |
-| --no-preserve = ATTR_LIST | don't preserve the specified attributes |
-| --parents | use full source file name under DIRECTORY |
-| -R, -r, --recursive | copy directories recursively |
-| --reflink[ = WHEN] | control clone/CoW copies. See below |
-| --remove-destination | remove each existing destination file before attempting to open it (contrast with --force) |
-| --sparse = WHEN | control creation of sparse files. See below |
-| --strip-trailing-slashes | remove any trailing slashes from each SOURCE argument |
-| -s, --symbolic-link | make symbolic links instead of copying |
-| -S, --suffix = SUFFIX | override the usual backup suffix |
-| -t, --target-directory = DIRECTORY | copy all SOURCE arguments into DIRECTORY |
-| -T, --no-target-directory | treat DEST as a normal file |
-| -u, --update | copy only when the SOURCE file is newer than the destination file or when the destination file is missing |
-| -v, --verbose | explain what is being done |
-| -x, --one-file-system | stay on this file system |
-| -Z | set SELinux security context of destination file to default type |
-| --context[ = CTX] | like -Z, or if CTX is specified then set the SELinux or SMACK security context to CTX |
-| --help | display this help and exit |
-| --version | output version information and exit |
+```shell
+-a：此参数的效果和同时指定"-dpR"参数相同；
+-d：当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录；
+-f：强行复制文件或目录，不论目标文件或目录是否已存在；
+-i：覆盖既有文件之前先询问用户；
+-l：对源文件建立硬连接，而非复制文件；
+-p：保留源文件或目录的属性；
+-R/r：递归处理，将指定目录下的所有文件与子目录一并处理；
+-s：对源文件建立符号连接，而非复制文件；
+-u：使用这项参数后只会在源文件的更改时间较目标文件更新时或是名称相互对应的目标文件并不存在时，才复制文件；
+-S：在备份文件时，用指定的后缀“SUFFIX”代替文件的默认后缀；
+-b：覆盖已存在的文件目标前将目标文件备份；
+-v：详细显示命令执行的操作。
+```
+
+## 参数 
+
+*   源文件：制定源文件列表。默认情况下，cp命令不能复制目录，如果要复制目录，则必须使用`-r/R`选项；
+*   目标文件：指定目标文件。当“源文件”为多个文件时，要求“目标文件”为指定的目录。
 
 ## 示例
 
@@ -81,4 +67,47 @@ cp [OPTION]... -t DIRECTORY SOURCE...
 
 ```bash
 cp -t demo backup
+```
+
+## 实例 
+
+### 复制目录下所有到另一个目录下
+
+```shell
+cp aaa/* /bbb
+# 复制目录 aaa 下所有到 /bbb 目录下，这时如果 /bbb 目录下有和 aaa 同名的文件，需要按 Y 来确认并且会略过 aaa 目录下的子目录。
+```
+
+```shell
+cp -r aaa/* /bbb
+# 这次依然需要按Y来确认操作，但是没有忽略子目录。
+```
+
+```shell
+cp -a aaa/* /bbb
+# 依然需要按Y来确认操作，并且把aaa目录以及子目录和文件属性也传递到了/bbb。
+```
+
+### 递归强制复制目录到指定目录中覆盖已存在文件
+
+```shell
+cp -rfb ./* ../backup
+# 将当前目录下所有文件，复制到当前目录的兄弟目录 backup 文件夹中
+```
+
+### 拷贝目录下的隐藏文件
+
+```shell
+cp -r aaa/.* ./bbb
+# 将 aaa 目录下的，所有`.`开头的文件，复制到 bbb 目录中。
+
+cp -a aaa ./bbb/ 
+# 记住后面目录最好的'/' 带上 `-a` 参数
+```
+
+### 复制到当前目录
+
+```shell
+cp aaa.conf ./
+# 将 aaa.conf 复制到当前目录
 ```
