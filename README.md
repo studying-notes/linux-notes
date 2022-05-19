@@ -62,6 +62,7 @@ cinst rufus
 - [apk Alpine Linux 下的包管理工具](tools/pkg-manager/apk.md)
 - [apt-get Debian Linux 发行版中的 APT 软件包管理工具](tools/pkg-manager/apt-get.md)
 - [apt-key 管理 Debian Linux 系统中的软件包密钥](tools/pkg-manager/apt-key.md)
+- [opkg OpenWrt 包管理器](tools/pkg-manager/opkg.md)
 
 ### 系统自带工具
 
