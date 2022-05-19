@@ -57,6 +57,10 @@ cinst rufus
 
 ## 常用工具
 
+### 包管理器
+
+- [apk Alpine Linux 下的包管理工具](tools/pkg-manager/apk.md)
+
 ### 系统自带工具
 
 - [alias 设置别名](tools/standard/alias.md)
