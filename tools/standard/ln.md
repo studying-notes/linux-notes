@@ -21,88 +21,87 @@ draft: false  # 草稿
 
 > 创建链接文件
 
+Linux 具有为一个文件起多个名字的功能，称为链接。被链接的文件可以存放在相同的目录下，但是必须有不同的文件名，而不用在硬盘上为同样的数据重复备份。另外，被链接的文件也可以有相同的文件名，但是存放在不同的目录下，这样只要对一个目录下的该文件进行修改，就可以完成对所有目录下同名链接文件的修改。对于某个文件的各链接文件，我们可以给它们指定不同的存取权限，以控制对信息的共享和增强安全性。
+
+文件链接有两种形式，即硬链接和符号链接。
+
+ln 功能说明：是为某一个文件在另外一个位置建立一个同步的链接，当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的目录下用 ln 命令链接（link）它就可以，不必重复的占用磁盘空间。
+
+**ln 命令** 用来为文件创建链接，链接类型分为硬链接和符号链接两种，默认的链接类型是硬链接。如果要创建符号链接必须使用 "-s" 选项。
+
+ln 命令会保持每一处链接文件的同步性，也就是说，不论你改动了哪一处，其它的文件都会发生相同的变化。
+
+注意：符号链接文件不是一个独立的文件，它的许多属性依赖于源文件，所以给符号链接文件设置存取权限是没有意义的。
+
 ## 格式
 
-```bash
-ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
-ln [OPTION]... TARGET                  (2nd form)
-ln [OPTION]... TARGET... DIRECTORY     (3rd form)
-ln [OPTION]... -t DIRECTORY TARGET...  (4th form)
+```shell
+ln [选项]... [-T] 目标 链接名	(第一种格式)
+　或：ln [选项]... 目标		(第二种格式)
+　或：ln [选项]... 目标... 目录	(第三种格式)
+　或：ln [选项]... -t 目录 目标...	(第四种格式)
 ```
 
-- In the 1st form, create a link to TARGET with the name LINK_NAME.
-- In the 2nd form, create a link to TARGET in the current directory.
-- In the 3rd and 4th forms, create links to each TARGET in DIRECTORY.
-- Create hard links by default, symbolic links with `--symbolic`.
-- By default, each destination (name of new link) should not already exist.
-- When creating hard links, each TARGET must exist.  Symbolic links can hold arbitrary text; if later resolved, a relative link is interpreted in relation to its parent directory.
+## 选项
+
+```shell
+--backup[=CONTROL]      # 为每个已存在的目标文件创建备份文件
+-b                      # 类似--backup，但不接受任何参数
+-d, -F, --directory         # 创建指向目录的硬链接(只适用于超级用户)
+-f, --force                 # 强行删除任何已存在的目标文件
+-i, --interactive           # 覆盖既有文件之前先询问用户
+-L, --logical               # 取消引用作为符号链接的目标
+-n, --no-dereference        # 把符号链接的目的目录视为一般文件
+-P, --physical              # 直接将硬链接到符号链接
+-r, --relative              # 创建相对于链接位置的符号链接
+-s, --symbolic              # 对源文件建立符号链接，而非硬链接
+-S, --suffix=SUFFIX         # 用"-b"参数备份目标文件后，备份文件的字尾会被加上一个备份字符串，预设的备份字符串是符号“~”，用户可通过“-S”参数来改变它
+-t, --target-directory=DIRECTORY # 指定要在其中创建链接的DIRECTORY
+-T, --no-target-directory   # 将“LINK_NAME”视为常规文件
+-v, --verbose               # 打印每个链接文件的名称
+--help      # 显示此帮助信息并退出
+--version   # 显示版本信息并退出
+```
 
 ## 参数
 
-| 参数 | 作用 |
-| -------- | -------- |
-| --backup[ = CONTROL] | make a backup of each existing destination file |
-| -b | like --backup but does not accept an argument |
-| -d, -F, --directory | allow the superuser to attempt to hard link directories (note: will probably fail due to system restrictions, even for the superuser) |
-| -f, --force | remove existing destination files |
-| -i, --interactive | prompt whether to remove destinations |
-| -L, --logical | dereference TARGETs that are symbolic links |
-| -n, --no-dereference | treat LINK_NAME as a normal file if it is a symbolic link to a directory |
-| -P, --physical | make hard links directly to symbolic links |
-| -r, --relative | create symbolic links relative to link location |
-| -s, --symbolic | make symbolic links instead of hard links |
-| -S, --suffix = SUFFIX | override the usual backup suffix |
-| -t, --target-directory = DIRECTORY | specify the DIRECTORY in which to create the links |
-| -T, --no-target-directory | treat LINK_NAME as a normal file always |
-| -v, --verbose | print name of each linked file |
-| --help | display this help and exit |
-| --version | output version information and exit |
+*   源文件：指定链接的源文件。如果使用`-s`选项创建符号链接，则“源文件”可以是文件或者目录。创建硬链接时，则“源文件”参数只能是文件。
+*   目标文件：指定源文件的目标链接文件。
 
-- The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
-- The version control method may be selected via the --backup option or through the VERSION_CONTROL environment variable.  Here are the values:
-
-  - none, off       never make backups (even if --backup is given)
-  - numbered, t     make numbered backups
-  - existing, nil   numbered if numbered backups exist, simple otherwise
-  - simple, never   always make simple backups
-
-- Using -s ignores -L and -P.  Otherwise, the last option specified controls behavior when a TARGET is a symbolic link, defaulting to -P.
+```shell
+none, off       # 不进行备份(即使使用了--backup 选项)
+numbered, t     # 备份文件加上数字进行排序
+existing, nil   # 若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
+simple, never   # 永远使用普通方式备份
+```
 
 ## 示例
 
 1. 创建一个类似于 Windows 系统中快捷方式的软链接，当原始文件被删除后，就无法读取新建的链接文件了
 
 ```bash
-echo "I love you!" > love
-ln -s love loveln
-
-cat love
-I love you!
-
-cat loveln
-I love you!
-
-rm -f love
-cat loveln
-cat: loveln: No such file or directory
+ln -s /usr/bin/python3 /usr/bin/python
 ```
 
 2. 创建一个硬链接，即相当于针对原始文件的硬盘存储位置创建了一个指针，这样一来，新创建的这个硬链接就不再依赖于原始文件的名称等信息，也不会因为原始文件的删除而导致无法读取。同时可以看到创建硬链接后，原始文件的硬盘链接数量增加到了 2
 
 ```bash
-echo "I love you!" > love
-ln love loveln
-
-cat love
-I love you!
-
-cat loveln
-I love you!
-
-ls -l love
--rw-r--r-- 2 root root 12 Jan 19 13:56 love
-
-rm -f love
-cat loveln
-I love you!
+ln /usr/bin/python3 /usr/bin/python
 ```
+
+## 扩展知识
+
+### 软链接
+
+1. 软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式
+2. 软链接可以 跨文件系统 ，硬链接不可以
+3. 软链接可以对一个不存在的文件名进行链接
+4. 软链接可以对目录进行链接
+
+### 硬链接
+
+建立硬链接时，在另外的目录或本目录中增加目标文件的一个目录项，这样，一个文件就登记在多个目录中。
+
+1. 硬链接，以文件副本的形式存在。但不占用实际空间。
+2. 不允许给目录创建硬链接
+3. 硬链接只有在同一个文件系统中才能创建
