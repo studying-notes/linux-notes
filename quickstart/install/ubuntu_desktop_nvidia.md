@@ -54,3 +54,13 @@ see /var/log/unattended-upgrades/unattended-upgrades.log
 ```shell
 rm /var/lib/unattended-upgrades/kept-back
 ```
+
+但很快还会出现。。。
+
+https://askubuntu.com/questions/601/the-following-packages-have-been-kept-back-why-and-how-do-i-solve-it
+
+```
+apt install $(cat /var/lib/unattended-upgrades/kept-back)
+```
+
+然后重启。
