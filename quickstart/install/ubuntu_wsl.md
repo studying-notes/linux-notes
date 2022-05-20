@@ -91,3 +91,13 @@ do-release-upgrade -d
 ```shell
 lsb_release -a
 ```
+
+## WSL2 GUI 测试
+
+```
+apt install gedit -y
+
+gedit ~/.bashrc
+```
+
+分辨率不匹配，基本用不了。

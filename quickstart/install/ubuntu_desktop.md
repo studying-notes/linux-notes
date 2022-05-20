@@ -193,6 +193,7 @@ set -U fish_greeting
 Setp 3. 设置别名，自定义变量
 
 ```shell
+vi ~/.config/fish/config.fish
 source ~/.config/fish/config.fish
 ```
 
