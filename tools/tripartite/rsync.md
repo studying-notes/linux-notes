@@ -12,221 +12,198 @@ toc: true  # 目录
 draft: false  # 草稿
 ---
 
-可以在本地计算机与远程计算机之间，或者两个本地目录之间同步文件（但不支持两台远程计算机之间的同步）。它也可以当作文件复制工具，替代 cp 和 mv 命令。
+> 远程数据同步工具
 
-## 基本用法
+rsync 命令是一个远程数据同步工具，可通过 LAN/WAN 快速同步多台主机间的文件。rsync 使用所谓的“rsync 算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。 
 
-### -r 参数
+## 语法
 
-本机使用 rsync 命令时，可以作为 cp 和 mv 命令的替代方法，将源目录同步到目标目录。
+```shell
+rsync [OPTION]... SRC DEST
+rsync [OPTION]... SRC [USER@]host:DEST
+rsync [OPTION]... [USER@]HOST:SRC DEST
+rsync [OPTION]... [USER@]HOST::SRC DEST
+rsync [OPTION]... SRC [USER@]HOST::DEST
+rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
+```
+
+对应于以上六种命令格式，rsync 有六种不同的工作模式：
+
+1.  拷贝本地文件。当SRC和DES路径信息都不包含有单个冒号":"分隔符时就启动这种工作模式。如：`rsync -a /data /backup`
+2.  使用一个远程shell程序(如rsh、ssh)来实现将本地机器的内容拷贝到远程机器。当DST路径地址包含单个冒号":"分隔符时启动该模式。如：`rsync -avz *.c foo:src`
+3.  使用一个远程shell程序(如rsh、ssh)来实现将远程机器的内容拷贝到本地机器。当SRC地址路径包含单个冒号":"分隔符时启动该模式。如：`rsync -avz foo:src/bar /data`
+4.  从远程rsync服务器中拷贝文件到本地机。当SRC路径信息包含"::"分隔符时启动该模式。如：`rsync -av root@192.168.78.192::www /databack`
+5.  从本地机器拷贝文件到远程rsync服务器中。当DST路径信息包含"::"分隔符时启动该模式。如：`rsync -av /databack root@192.168.78.192::www`
+6.  列远程机的文件列表。这类似于rsync传输，不过只要在命令中省略掉本地机信息即可。如：`rsync -v rsync://192.168.78.192/www`
+
+## 选项
+
+```shell
+-v, --verbose 详细模式输出。
+-q, --quiet 精简输出模式。
+-c, --checksum 打开校验开关，强制对文件传输进行校验。
+-a, --archive 归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgoD。
+-r, --recursive 对子目录以递归模式处理。
+-R, --relative 使用相对路径信息。
+-b, --backup 创建备份，也就是对于目的已经存在有同样的文件名时，将老的文件重新命名为~filename。可以使用--suffix选项来指定不同的备份文件前缀。
+--backup-dir 将备份文件(如~filename)存放在在目录下。
+-suffix=SUFFIX 定义备份文件前缀。
+-u, --update 仅仅进行更新，也就是跳过所有已经存在于DST，并且文件时间晚于要备份的文件，不覆盖更新的文件。
+-l, --links 保留软链结。
+-L, --copy-links 想对待常规文件一样处理软链结。
+--copy-unsafe-links 仅仅拷贝指向SRC路径目录树以外的链结。
+--safe-links 忽略指向SRC路径目录树以外的链结。
+-H, --hard-links 保留硬链结。
+-p, --perms 保持文件权限。
+-o, --owner 保持文件属主信息。
+-g, --group 保持文件属组信息。
+-D, --devices 保持设备文件信息。
+-t, --times 保持文件时间信息。
+-S, --sparse 对稀疏文件进行特殊处理以节省DST的空间。
+-n, --dry-run现实哪些文件将被传输。
+-w, --whole-file 拷贝文件，不进行增量检测。
+-x, --one-file-system 不要跨越文件系统边界。
+-B, --block-size=SIZE 检验算法使用的块尺寸，默认是700字节。
+-e, --rsh=command 指定使用rsh、ssh方式进行数据同步。
+--rsync-path=PATH 指定远程服务器上的rsync命令所在路径信息。
+-C, --cvs-exclude 使用和CVS一样的方法自动忽略文件，用来排除那些不希望传输的文件。
+--existing 仅仅更新那些已经存在于DST的文件，而不备份那些新创建的文件。
+--delete 删除那些DST中SRC没有的文件。
+--delete-excluded 同样删除接收端那些被该选项指定排除的文件。
+--delete-after 传输结束以后再删除。
+--ignore-errors 及时出现IO错误也进行删除。
+--max-delete=NUM 最多删除NUM个文件。
+--partial 保留那些因故没有完全传输的文件，以是加快随后的再次传输。
+--force 强制删除目录，即使不为空。
+--numeric-ids 不将数字的用户和组id匹配为用户名和组名。
+--timeout=time ip超时时间，单位为秒。
+-I, --ignore-times 不跳过那些有同样的时间和长度的文件。
+--size-only 当决定是否要备份文件时，仅仅察看文件大小而不考虑文件时间。
+--modify-window=NUM 决定文件是否时间相同时使用的时间戳窗口，默认为0。
+-T --temp-dir=DIR 在DIR中创建临时文件。
+--compare-dest=DIR 同样比较DIR中的文件来决定是否需要备份。
+-P 等同于 --partial。
+--progress 显示备份过程。
+-z, --compress 对备份的文件在传输时进行压缩处理。
+--exclude=PATTERN 指定排除不需要传输的文件模式。
+--include=PATTERN 指定不排除而需要传输的文件模式。
+--exclude-from=FILE 排除FILE中指定模式的文件。
+--include-from=FILE 不排除FILE指定模式匹配的文件。
+--version 打印版本信息。
+--address 绑定到特定的地址。
+--config=FILE 指定其他的配置文件，不使用默认的rsyncd.conf文件。
+--port=PORT 指定其他的rsync服务端口。
+--blocking-io 对远程shell使用阻塞IO。
+-stats 给出某些文件的传输状态。
+--progress 在传输时显示传输过程。
+--log-format=formAT 指定日志文件格式。
+--password-file=FILE 从FILE中得到密码。
+--bwlimit=KBPS 限制I/O带宽，KBytes per second。
+-h, --help 显示帮助信息。
+```
+
+## 实例
+
+### 将源目录同步到目标目录
 
 ```shell
 rsync -r source destination
 ```
 
-上面命令中，-r 表示递归，即包含子目录。注意，-r 是必须的，否则 rsync 运行不会成功。source 目录表示源目录，destination 表示目标目录。
+上面命令中，`-r` 表示递归，即包含子目录。注意，`-r`是必须的，否则 `rsync` 运行不会成功。`source` 目录表示源目录，`destination` 表示目标目录。
 
-如果有多个文件或目录需要同步，可以写成下面这样。
+### 多个文件或目录同步
 
 ```shell
 rsync -r source1 source2 destination
 ```
 
-上面命令中，source1、source2 都会被同步到 destination 目录。
+上面命令中，`source1`、`source2` 都会被同步到 `destination` 目录。
 
-### -a 参数
+### 同步元信息
 
--a 参数可以替代 -r，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等）。由于 rsync 默认使用文件大小和修改时间决定文件是否需要更新，所以 -a 比 -r 更有用。下面的用法才是常见的写法。
+`-a` 参数可以替代 `-r`，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等）。由于 `rsync` 默认使用文件大小和修改时间决定文件是否需要更新，所以 `-a` 比 `-r` 更有用。下面的用法才是常见的写法。
 
 ```shell
 rsync -a source destination
 ```
 
-目标目录 destination 如果不存在，rsync 会自动创建。执行上面的命令后，源目录 source 被完整地复制到了目标目录 destination 下面，即形成了 destination/source 的目录结构。
+目标目录 `destination` 如果不存在，`rsync` 会自动创建。执行上面的命令后，源目录 `source` 被完整地复制到了目标目录 `destination` 下面，即形成了 `destination/source` 的目录结构。
 
-如果只想同步源目录 source 里面的内容到目标目录 destination，则需要在源目录后面加上斜杠。
+如果只想同步源目录 `source` 里面的内容到目标目录 `destination` ，则需要在源目录后面加上斜杠。
 
 ```shell
 rsync -a source/ destination
 ```
 
-上面命令执行后，source 目录里面的内容，就都被复制到了 destination 目录里面，并不会在 destination 下面创建一个 source 子目录。
+上面命令执行后，`source` 目录里面的内容，就都被复制到了 `destination` 目录里面，并不会在 `destination` 下面创建一个 `source` 子目录。
 
-### -n 参数
 
-如果不确定 rsync 执行后会产生什么结果，可以先用 -n 或 --dry-run 参数模拟执行的结果。
+### 模拟执行的结果
+
+如果不确定 `rsync` 执行后会产生什么结果，可以先用 `-n` 或 `--dry-run` 参数模拟执行的结果。
 
 ```shell
 rsync -anv source/ destination
 ```
 
-上面命令中，-n 参数模拟命令执行的结果，并不真的执行命令。-v 参数则是将结果输出到终端，这样就可以看到哪些内容会被同步。
+上面命令中，`-n` 参数模拟命令执行的结果，并不真的执行命令。`-v` 参数则是将结果输出到终端，这样就可以看到哪些内容会被同步。
 
-### --delete 参数
+### 目标目录成为源目录的镜像副本
 
-默认情况下，rsync 只确保源目录的所有内容（明确排除的文件除外）都复制到目标目录。它不会使两个目录保持相同，并且不会删除文件。如果要使得目标目录成为源目录的镜像副本，则必须使用 --delete 参数，这将删除只存在于目标目录、不存在于源目录的文件。
+默认情况下，`rsync` 只确保源目录的所有内容（明确排除的文件除外）都复制到目标目录。它不会使两个目录保持相同，并且不会删除文件。如果要使得目标目录成为源目录的镜像副本，则必须使用 `--delete` 参数，这将删除只存在于目标目录、不存在于源目录的文件。
 
 ```shell
 rsync -av --delete source/ destination
 ```
 
-上面命令中，--delete 参数会使得 destination 成为 source 的一个镜像。
+上面命令中，`--delete` 参数会使得 `destination` 成为 `source` 的一个镜像。
+
 
 ### 排除文件
 
-### --exclude 参数
-
-有时，我们希望同步时排除某些文件或目录，这时可以用 --exclude 参数指定排除模式。
+有时，我们希望同步时排除某些文件或目录，这时可以用--exclude参数指定排除模式。
 
 ```shell
-rsync -av --exclude = ' *.txt' source/ destination
+rsync -av --exclude='*.txt' source/ destination
+# 或者
+rsync -av --exclude '*.txt' source/ destination
 ```
 
-```shell
-rsync -av --exclude ' *.txt' source/ destination
-```
+上面命令排除了所有 `TXT` 文件。
 
-上面命令排除了所有 TXT 文件。
-
-注意，rsync 会同步以 " 点 " 开头的隐藏文件，如果要排除隐藏文件，可以这样写 --exclude = ". * "。
+注意，`rsync` 会同步以"点"开头的隐藏文件，如果要排除隐藏文件，可以这样写 `--exclude=".*"`。
 
 如果要排除某个目录里面的所有文件，但不希望排除目录本身，可以写成下面这样。
 
 ```shell
-rsync -av --exclude 'dir1/ * ' source/ destination
+rsync -av --exclude 'dir1/*' source/ destination
 ```
 
-多个排除模式，可以用多个 --exclude 参数。
+多个排除模式，可以用多个 `--exclude` 参数。
 
 ```shell
-rsync -av --exclude 'file1.txt' --exclude 'dir1/ * ' source/ destination
+rsync -av --exclude 'file1.txt' --exclude 'dir1/*' source/ destination
 ```
 
-多个排除模式也可以利用 Bash 的大扩号的扩展功能，只用一个 --exclude 参数。
+多个排除模式也可以利用 Bash 的大扩号的扩展功能，只用一个 `--exclude` 参数。
 
 ```shell
-rsync -av --exclude = {'file1.txt','dir1/ * '} source/ destination
+rsync -av --exclude={'file1.txt','dir1/*'} source/ destination
 ```
 
-如果排除模式很多，可以将它们写入一个文件，每个模式一行，然后用 --exclude-from 参数指定这个文件。
+如果排除模式很多，可以将它们写入一个文件，每个模式一行，然后用 `--exclude-from` 参数指定这个文件。
 
 ```shell
-rsync -av --exclude-from = 'exclude-file.txt' source/ destination
+rsync -av --exclude-from='exclude-file.txt' source/ destination
 ```
 
-### --include 参数
+### 指定必须同步的文件模式
 
---include 参数用来指定必须同步的文件模式，往往与 --exclude 结合使用。
+`--include` 参数用来指定必须同步的文件模式，往往与 `--exclude` 结合使用。
 
 ```shell
-rsync -av --include = " *.txt" --exclude = ' * ' source/ destination
+rsync -av --include="*.txt" --exclude='*' source/ destination
 ```
 
-上面命令指定同步时，排除所有文件，但是会包括 TXT 文件。
-
-## 远程同步
-
-### SSH 协议
-
-rsync 除了支持本地两个目录之间的同步，也支持远程同步。它可以将本地内容，同步到远程服务器。
-
-```shell
-rsync -av source/ [email protected]_host:destination
-```
-
-也可以将远程内容同步到本地。
-
-```shell
-rsync -av [email protected]_host:source/ destination
-```
-
-rsync 默认使用 SSH 进行远程登录和数据传输。
-
-由于早期 rsync 不使用 SSH 协议，需要用 -e 参数指定协议，后来才改的。所以，下面 -e ssh 可以省略。
-
-```shell
-rsync -av -e ssh source/ [email protected]_host:/destination
-```
-
-但是，如果 ssh 命令有附加的参数，则必须使用 -e 参数指定所要执行的 SSH 命令。
-
-```shell
-rsync -av -e 'ssh -p 2234' source/ [email protected]_host:/destination
-```
-
-上面命令中，-e 参数指定 SSH 使用 2234 端口。
-
-### rsync 协议
-
-除了使用 SSH，如果另一台服务器安装并运行了 rsync 守护程序，则也可以用 rsync:// 协议（默认端口 873）进行传输。具体写法是服务器与目标目录之间使用双冒号分隔 ::。
-
-```shell
-rsync -av source/ 19###6###2###2::module/destination
-```
-
-注意，上面地址中的 module 并不是实际路径名，而是 rsync 守护程序指定的一个资源名，由管理员分配。
-
-如果想知道 rsync 守护程序分配的所有 module 列表，可以执行下面命令。
-
-```shell
-rsync rsync://19###6###2###2
-```
-
-rsync 协议除了使用双冒号，也可以直接用 rsync:// 协议指定地址。
-
-```shell
-rsync -av source/ rsync://19###6###2###2/module/destination
-```
-
-## 增量备份
-
-rsync 的最大特点就是它可以完成增量备份，也就是默认只复制有变动的文件。
-
-除了源目录与目标目录直接比较，rsync 还支持使用基准目录，即将源目录与基准目录之间变动的部分，同步到目标目录。
-
-具体做法是，第一次同步是全量备份，所有文件在基准目录里面同步一份。以后每一次同步都是增量备份，只同步源目录与基准目录之间有变动的部分，将这部分保存在一个新的目标目录。这个新的目标目录之中，也是包含所有文件，但实际上，只有那些变动过的文件是存在于该目录，其他没有变动的文件都是指向基准目录文件的硬链接。
-
---link-dest 参数用来指定同步时的基准目录。
-
-```shell
-rsync -a --delete --link-dest /compare/path /source/path /target/path
-```
-
-上面命令中，--link-dest 参数指定基准目录 /compare/path，然后源目录 /source/path 跟基准目录进行比较，找出变动的文件，将它们拷贝到目标目录 /target/path。那些没变动的文件则会生成硬链接。这个命令的第一次备份时是全量备份，后面就都是增量备份了。
-
-## 配置项
-
-- -a、--archive 参数表示存档模式，保存所有的元数据，比如修改时间（modification time）、权限、所有者等，并且软链接也会同步过去。
-- --append 参数指定文件接着上次中断的地方，继续传输。
-- --append-verify 参数跟 --append 参数类似，但会对传输完成后的文件进行一次校验。如果校验失败，将重新发送整个文件。
-- -b、--backup 参数指定在删除或更新目标目录已经存在的文件时，将该文件更名后进行备份，默认行为是删除。更名规则是添加由 --suffix 参数指定的文件后缀名，默认是~。
-- --backup-dir 参数指定文件备份时存放的目录，比如 --backup-dir = /path/to/backups。
-- --bwlimit 参数指定带宽限制，默认单位是 KB/s，比如 --bwlimit = 100。
-- -c、--checksum 参数改变 rsync 的校验方式。默认情况下，rsync 只检查文件的大小和最后修改日期是否发生变化，如果发生变化，就重新传输；使用这个参数以后，则通过判断文件内容的校验和，决定是否重新传输。
-- --delete 参数删除只存在于目标目录、不存在于源目标的文件，即保证目标目录是源目标的镜像。
-- -e 参数指定使用 SSH 协议传输数据。
-- --exclude 参数指定排除不进行同步的文件，比如 --exclude = " *.iso"。
-- --exclude-from 参数指定一个本地文件，里面是需要排除的文件模式，每个模式一行。
-- --existing、--ignore-non-existing 参数表示不同步目标目录中不存在的文件和目录。
-- -h 参数表示以人类可读的格式输出。
-- -h、--help 参数返回帮助信息。
-- -i 参数表示输出源目录与目标目录之间文件差异的详细情况。
-- --ignore-existing 参数表示只要该文件在目标目录中已经存在，就跳过去，不再同步这些文件。
-- --include 参数指定同步时要包括的文件，一般与 --exclude 结合使用。
-- --link-dest 参数指定增量备份的基准目录。
-- -m 参数指定不同步空目录。
-- --max-size 参数设置传输的最大文件的大小限制，比如不超过 200KB（--max-size = '200k'）。
-- --min-size 参数设置传输的最小文件的大小限制，比如不小于 10KB（--min-size = 10k）。
-- -n 参数或 --dry-run 参数模拟将要执行的操作，而并不真的执行。配合 -v 参数使用，可以看到哪些内容会被同步过去。
-- -P 参数是 --progress 和 --partial 这两个参数的结合。
-- --partial 参数允许恢复中断的传输。不使用该参数时，rsync 会删除传输到一半被打断的文件；使用该参数后，传输到一半的文件也会同步到目标目录，下次同步时再恢复中断的传输。一般需要与 --append 或 --append-verify 配合使用。
-- --partial-dir 参数指定将传输到一半的文件保存到一个临时目录，比如 --partial-dir =.rsync-partial。一般需要与 --append 或 --append-verify 配合使用。
-- --progress 参数表示显示进展。
-- -r 参数表示递归，即包含子目录。
-- --remove-source-files 参数表示传输成功后，删除发送方的文件。
-- --size-only 参数表示只同步大小有变化的文件，不考虑文件修改时间的差异。
-- --suffix 参数指定文件名备份时，对文件名添加的后缀，默认是~。
-- -u、--update 参数表示同步时跳过目标目录中修改时间更新的文件，即不同步这些有更新的时间戳的文件。
-- -v 参数表示输出细节。-vv 表示输出更详细的信息，-vvv 表示输出最详细的信息。
-- --version 参数返回 rsync 的版本。
-- -z 参数指定同步时压缩数据。
+上面命令指定同步时，排除所有文件，但是会包括 `TXT` 文件。
