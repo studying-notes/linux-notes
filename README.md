@@ -187,3 +187,8 @@ cinst rufus
 - [第10章_基于UDP协议的接收和发送](docs/Linux网络编程/第10章_基于UDP协议的接收和发送.md)
 - [第11章_高级套接字](docs/Linux网络编程/第11章_高级套接字.md)
 - [第15章_IPv6简介](docs/Linux网络编程/第15章_IPv6简介.md)
+
+## 问题
+
+- [ssh 问题](issues/ssh.md)
+
