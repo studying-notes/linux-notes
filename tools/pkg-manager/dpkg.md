@@ -37,7 +37,7 @@ dpkg(选项)(参数)
 
 Deb 软件包：指定要操作的.deb 软件包。
 
-### 实例
+## 实例
 
 ```shell
 dpkg -i package.deb     # 安装包
@@ -50,4 +50,38 @@ dpkg -S keyword            # 搜索所属的包内容
 dpkg -l                    # 列出当前已安装的包
 dpkg -c package.deb        # 列出deb包的内容
 dpkg --configure package   # 配置包
+```
+
+## 常用软件
+
+### Git & SSH
+
+```shell
+opkg install git-http openssh-keygen openssh-client openssh-sftp-server
+```
+
+缺一个 Git 都不能正常。
+
+### Docker
+
+```shell
+opkg install --force-overwrite docker docker-compose dockerd luci-app-docker
+opkg install --force-overwrite luci-app-dockerman luci-i18n-dockerman-zh-cn luci-lib-docker
+opkg install --force-overwrite luci-i18n-docker-zh-cn
+```
+
+```shell
+opkg install fuse-overlayfs
+```
+
+### Python
+
+```shell
+opkg install python3 python3-pip
+```
+
+### Golang
+
+```shell
+opkg install golang
 ```
