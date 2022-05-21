@@ -63,6 +63,7 @@ cinst rufus
 - [apt-get Debian Linux 发行版中的 APT 软件包管理工具](tools/pkg-manager/apt-get.md)
 - [apt-key 管理 Debian Linux 系统中的软件包密钥](tools/pkg-manager/apt-key.md)
 - [dnf 新一代的 RPM 软件包管理器](tools/pkg-manager/dnf.md)
+- [dpkg Debian Linux 系统上安装、创建和管理软件包](tools/pkg-manager/dpkg.md)
 - [opkg OpenWrt 包管理器](tools/pkg-manager/opkg.md)
 - [yum 基于 RPM 的软件包管理器](tools/pkg-manager/yum.md)
 
@@ -160,7 +161,7 @@ cinst rufus
 ### 第三方工具
 
 - [ab 服务器性能测试工具](tools/tripartite/ab.md)
-- [hdparm 硬盘测试](tools/tripartite/hdparm.md)
+- [hdparm 显示与设定硬盘的参数](tools/tripartite/hdparm.md)
 - [iotop 监视磁盘I/O使用状况的工具](tools/tripartite/iotop.md)
 - [iostat 监视系统输入输出设备和 CPU 的使用情况](tools/tripartite/iostat.md)
 - [rsync 同步文件](tools/tripartite/rsync.md)
