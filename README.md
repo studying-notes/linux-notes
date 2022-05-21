@@ -37,6 +37,7 @@ draft: false  # 草稿
 - [Shell 脚本基础语法](docs/base/shell_script.md)
 - [pipeline 管道符与输入输出](docs/base/pipeline.md)
 - [Linux 串口与 USB 转串口问题](docs/base/serial_port.md)
+- [Linux 防火墙配置 iptables 和 firewalld](docs/base/firewall.md)
 
 ## 基础用法
 
