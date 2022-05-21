@@ -38,6 +38,7 @@ draft: false  # 草稿
 - [pipeline 管道符与输入输出](docs/base/pipeline.md)
 - [Linux 串口与 USB 转串口问题](docs/base/serial_port.md)
 - [Linux 防火墙配置 iptables 和 firewalld](docs/base/firewall.md)
+- [Linux 存储结构与磁盘划分](docs/base/storage.md)
 
 ## 基础用法
 
