@@ -104,6 +104,12 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
 ## 实例
 
+### 覆盖复制目录
+
+```shell
+rsync -v -r --delete --force --progress /mnt/root /
+```
+
 ### 将源目录同步到目标目录
 
 ```shell
