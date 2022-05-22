@@ -57,6 +57,8 @@ cinst rufus
 - [Fish Shell 安装与主题切换](quickstart/shell/fish.md)
 - [Ubuntu WSL 问题笔记](quickstart/install/ubuntu_wsl.md)
 - [Kali Linux WSL 问题笔记](quickstart/install/kali_wsl.md)
+- [MacOS 基本配置](quickstart/install/macos.md)
+- [VMware 安装 MacOS](quickstart/install/macos_vmware.md)
 
 ## 常用工具
 
