@@ -14,6 +14,12 @@ draft: false  # 草稿
 
 > Debian Linux 系统上安装、创建和管理软件包
 
+缺点大概是不能自动解决依赖，可以用 apt 替代：
+
+```
+apt install -fy ./xxx.deb
+```
+
 ## 语法
 
 ```shell
