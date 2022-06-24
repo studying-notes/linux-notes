@@ -28,6 +28,7 @@ draft: false  # 草稿
 - [System Program Problem Detected 弹窗](#system-program-problem-detected-弹窗)
 - [桌面允许 root 登录](#桌面允许-root-登录)
 - [远程桌面](#远程桌面)
+- [常用软件](#常用软件)
 - [安装 Docker](#安装-docker)
 - [安装 OneDrive](#安装-onedrive)
 
@@ -319,6 +320,12 @@ apt install -y tightvncserver xrdp
 
 ```shell
 passwd root
+```
+
+## 常用软件
+
+```shell
+snap install --classic code
 ```
 
 ## 安装 Docker
