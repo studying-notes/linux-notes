@@ -37,10 +37,18 @@ draft: false  # 草稿
 apt update
 ```
 
+```shell
+apt update -o Acquire::http::proxy='http://192.168.0.12:7890'
+```
+
 官方源速度现在也不慢了。
 
 ```shell
 apt upgrade -y
+```
+
+```shell
+apt upgrade -y -o Acquire::http::proxy='http://192.168.0.12:7890'
 ```
 
 一行命令：

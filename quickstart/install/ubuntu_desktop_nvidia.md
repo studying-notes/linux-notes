@@ -4,9 +4,8 @@ author: "Rustle Karl"
 
 title: "Ubuntu 安装 Nvidai 显卡驱动"
 url:  "posts/linux/quickstart/install/ubuntu_desktop_nvidia"  # 永久链接
-tags: [ "Linux" ]  # 标签
-series: [ "Linux 学习笔记" ]  # 系列
-categories: [ "学习笔记" ]  # 分类
+tags: [ "Linux" ]
+categories: [ "Linux 学习笔记" ]
 
 toc: true  # 目录
 draft: false  # 草稿

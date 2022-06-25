@@ -6,9 +6,8 @@ author: "Rustle Karl"  # 作者
 title: "CentOS 系统重装后的基本配置"  # 文章标题
 description: "每次系统重装、更换新的系统/硬件，开发环境的重新搭建都是一个巨大的工程"
 url:  "posts/linux/quickstart/install/centos"  # 设置网页链接，默认使用文件名
-tags: [ "centos", "linux", "config"]  # 自定义标签
-series: [ "系统重装基础配置", "Linux 学习笔记" ]  # 文章主题/文章系列
-categories: [ "基础配置"]  # 文章分类
+tags: [ "centos", "linux", "config"]
+categories: [ "Linux 学习笔记" ]
 
 # 章节
 weight: 20 # 排序优先级
@@ -67,15 +66,6 @@ systemctl restart sshd
 
 ```shell
 ssh root@192.168.10.109
-ssh root@192.168.10.216
-ssh root@192.168.10.168
-ssh root@192.168.10.114
-ssh root@192.168.10.158
-ssh root@192.168.10.102
-ssh root@192.168.10.120
-ssh root@192.168.10.240
-ssh root@192.168.10.187
-ssh root@192.168.10.212
 ```
 
 ```shell
@@ -97,18 +87,6 @@ ssh-keygen -t rsa
 
 ```shell
 ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.109
-
-ssh-copy-id -i ~/.ssh/id_rsa.pub  rustlekarl@macos
-
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.216
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.168
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.114
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.158
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.102
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.120
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.240
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.187
-ssh-copy-id -i ~/.ssh/id_rsa.pub  root@192.168.10.212
 ```
 
 ### 永久修改主机名
