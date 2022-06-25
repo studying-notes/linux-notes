@@ -3,10 +3,9 @@ date: 2022-05-02T12:19:52+08:00
 author: "Rustle Karl"
 
 title: "Ubuntu WSL 问题笔记"
-url:  "posts/linux/quickstart/install/ubuntu_wsl_upgrade"  # 永久链接
-tags: [ "Linux" ]  # 标签
-series: [ "Linux 学习笔记" ]  # 系列
-categories: [ "学习笔记" ]  # 分类
+url:  "posts/linux/quickstart/install/ubuntu_wsl"  # 永久链接
+tags: [ "Linux" ]
+categories: [ "Linux 学习笔记" ]
 
 toc: true  # 目录
 draft: false  # 草稿
@@ -101,3 +100,9 @@ gedit ~/.bashrc
 ```
 
 分辨率不匹配，基本用不了。
+
+## 卸载重启检测
+
+```shell
+apt purge needrestart
+```
