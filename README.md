@@ -102,6 +102,7 @@ cinst rufus
 - [fdisk 管理硬盘设备](tools/standard/fdisk.md)
 - [file 确定文件类型](tools/standard/file.md)
 - [find 按照指定条件查找文件](tools/standard/find.md)
+- [firewall-cmd 防火墙](tools/standard/firewall-cmd.md)
 - [getfacl 显示文件上设置的 ACL 信息](tools/standard/getfacl.md)
 - [groupadd 创建新的用户组](tools/standard/groupadd.md)
 - [halt 中断系统](tools/standard/halt.md)
