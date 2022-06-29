@@ -112,6 +112,8 @@ cinst rufus
 - [grep 搜索匹配关键词](tools/standard/grep.md)
 - [ifconfig 获取网卡配置与网络状态等信息](tools/standard/ifconfig.md)
 - [id 显示指定用户的相关信息](tools/standard/id.md)
+- [iptables-save 备份 iptables 的表配置](tools/standard/iptables-save.md)
+- [iptables-restore 还原 iptables 表的配置](tools/standard/iptables-restore.md)
 - [iptables Linux 上常用的防火墙软件](tools/standard/iptables.md)
 - [kill 终止进程](tools/standard/kill.md)
 - [killall 终止指定名称的全部进程](tools/standard/killall.md)
