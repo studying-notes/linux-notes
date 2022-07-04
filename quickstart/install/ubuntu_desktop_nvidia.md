@@ -14,15 +14,11 @@ draft: false  # 草稿
 ## 安装
 
 ```shell
-sudo apt update && sudo apt upgrade -y
-```
-
-```shell
 ubuntu-drivers devices
 ```
 
 ```shell
-sudo ubuntu-drivers autoinstall
+ubuntu-drivers autoinstall
 ```
 
 ```shell

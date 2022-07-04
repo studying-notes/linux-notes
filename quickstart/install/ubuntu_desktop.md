@@ -19,7 +19,6 @@ draft: false  # 草稿
   - [永久修改主机名](#永久修改主机名)
   - [不显示登录标语](#不显示登录标语)
   - [安装 Fish 终端](#安装-fish-终端)
-    - [切换主题](#切换主题)
 - [WSL 默认 root](#wsl-默认-root)
 - [VMWare Tools](#vmware-tools)
 - [Xvfb 虚拟 X Server](#xvfb-虚拟-x-server)
@@ -176,11 +175,7 @@ touch ~/.hushlogin
 
 ### 安装 Fish 终端
 
-Setp 1. 添加源安装
-
-```shell
-apt-add-repository ppa:fish-shell/release-3 && apt update
-```
+Setp 1. 安装
 
 ```shell
 apt install -y fish
@@ -217,24 +212,7 @@ usermod -s `which fish`  root
 usermod -s `which bash`  root
 ```
 
-#### 切换主题
-
-```shell
-git config --global http.https://github.com.proxy ubuntu-amd64:8118
-
-curl -x 192.168.0.107:8118 https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-
-omf install eclm
-omf theme eclm
-
-omf install batman
-omf theme batman
-
-omf install harleen
-omf theme harleen
-
-git config --global --unset http.https://github.com.proxy
-```
+保持默认主题，还是默认好看。
 
 ## WSL 默认 root
 

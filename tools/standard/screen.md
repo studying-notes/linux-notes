@@ -30,8 +30,7 @@ draft: false  # 草稿
   - [回到 prefect 这个 session](#回到-prefect-这个-session)
   - [远程 detach 某个 session](#远程-detach-某个-session)
   - [结束当前 session 并回到 prefect 这个 session](#结束当前-session-并回到-prefect-这个-session)
-  - [屏幕分割*](#屏幕分割)
-- [命令](#命令)
+  - [屏幕分割](#屏幕分割)
 
 ## 安装
 
@@ -102,40 +101,12 @@ screen -d prefect
 screen -d -r prefect
 ```
 
-### 屏幕分割*
+### 屏幕分割
 
-可以使用快捷键C-a S将显示器水平分割，C-a | 垂直分屏。分屏以后，可以使用C-a <tab>在各个区块间切换，每一区块上都可以创建窗口并在其中运行进程。
+- `ctrl+a shift+s` 将显示器水平分割
+- `ctrl+a shift+|` 垂直分屏
 
-可以用C-a X快捷键关闭当前焦点所在的屏幕区块，也可以用C-a Q关闭除当前区块之外其他的所有区块。关闭的区块中的窗口并不会关闭，还可以通过窗口切换找到它。
+可以使用 `ctrl+a tab` 在屏幕各个区块间切换，每一区块上都可以创建窗口 `ctrl+a c` 并在其中运行进程。
 
-## 命令
+- `ctrl+a x` 关闭终端
 
-在每个screen session 下，所有命令都以 `ctrl+a` (C-a) 开始。
-
-```shell
-C-a ? -> 显示所有键绑定信息
-C-a c -> 创建一个新的运行shell的窗口并切换到该窗口
-C-a n -> Next，切换到下一个 window 
-C-a p -> Previous，切换到前一个 window 
-C-a 0..9 -> 切换到第 0..9 个 window
-Ctrl+a [Space] -> 由视窗0循序切换到视窗9
-C-a C-a -> 在两个最近使用的 window 间切换 
-C-a x -> 锁住当前的 window，需用用户密码解锁
-C-a d -> detach，暂时离开当前session，将目前的 screen session (可能含有多个 windows) 丢到后台执行，并会回到还没进 screen 时的状态，此时在 screen session 里，每个 window 内运行的 process (无论是前台/后台)都在继续执行，即使 logout 也不影响。 
-C-a z -> 把当前session放到后台执行，用 shell 的 fg 命令则可回去。
-C-a w -> 显示所有窗口列表
-C-a t -> time，显示当前时间，和系统的 load 
-C-a k -> kill window，强行关闭当前的 window
-C-a  -> 进入 copy mode，在 copy mode 下可以回滚、搜索、复制就像用使用 [vi 一样
-    C-b Backward，PageUp 
-    C-f Forward，PageDown 
-    H(大写) High，将光标移至左上角 
-    L Low，将光标移至左下角 
-    0 移到行首 
-    $ 行末 
-    w forward one word，以字为单位往前移 
-    b backward one word，以字为单位往后移 
-    Space 第一次按为标记区起点，第二次按为终点 
-    Esc 结束 copy mode 
-C-a ] -> paste，把刚刚在 copy mode 选定的内容贴上
-```
