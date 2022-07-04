@@ -126,6 +126,18 @@ dd if=/dev/zero of=test bs=1M count=0 seek=100000
 seq 1000000 | xargs -i dd if=/dev/zero of={}.dat bs=1024 count=1
 ```
 
+### 随机生成 1 百个 10M 的文件
+
 ```bash
 seq 100 | xargs -i dd if=/dev/zero of={}.dat bs=10M count=1
 ```
+
+S3 是压缩储存的，上面的命令储存后比较小。
+
+用随机数据源：
+
+```bash
+seq 100 | xargs -i dd if=/dev/urandom of={}.dat bs=10M count=1
+```
+
+大了很多。
