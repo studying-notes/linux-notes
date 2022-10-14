@@ -11,6 +11,20 @@ toc: true  # 目录
 draft: false  # 草稿
 ---
 
+## 设置 WSL 默认 root 用户
+
+```shell
+ubuntu config --default-user root
+```
+
+```shell
+kali config --default-user root
+```
+
+```shell
+ubuntu2004 config --default-user root
+```
+
 ## 系统更新
 
 ```shell
@@ -19,18 +33,6 @@ sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 sudo sed -i 's/mirrors.ustc.edu.cn/archive.ubuntu.com/g' /etc/apt/sources.list
 
 apt update && apt upgrade -y
-```
-
-## WSL 默认 root
-
-```shell
-ubuntu config --default-user root
-
-kali config --default-user root
-```
-
-```shell
-ubuntu2004 config --default-user root
 ```
 
 ## WSL1 转换为 WSL2
@@ -55,7 +57,9 @@ wsl.exe --set-version ubuntu 2
 
 ```shell
 vim /etc/wsl.conf
+```
 
+```shell
 vi /etc/wsl.conf
 ```
 
