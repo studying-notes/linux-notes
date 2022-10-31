@@ -11,28 +11,13 @@ toc: true  # 目录
 draft: true  # 草稿
 ---
 
+## 简介
+
 > 在指定目录下查找文件
 
 **find 命令** 用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。
 
 如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
-
-- [格式](#格式)
-  - [选项](#选项)
-  - [参数](#参数)
-- [示例](#示例)
-- [高级用法](#高级用法)
-  - [根据文件或者正则表达式进行匹配](#根据文件或者正则表达式进行匹配)
-  - [否定参数](#否定参数)
-  - [根据文件类型进行搜索](#根据文件类型进行搜索)
-  - [基于目录深度搜索](#基于目录深度搜索)
-  - [根据文件时间戳进行搜索](#根据文件时间戳进行搜索)
-  - [根据文件大小进行匹配](#根据文件大小进行匹配)
-  - [删除匹配文件](#删除匹配文件)
-  - [根据文件权限/所有权进行匹配](#根据文件权限所有权进行匹配)
-  - [借助`-exec`选项与其他命令结合使用](#借助-exec选项与其他命令结合使用)
-  - [搜索但跳过指定的目录](#搜索但跳过指定的目录)
-  - [列出所有长度为零的文件](#列出所有长度为零的文件)
 
 ## 格式
 
@@ -66,34 +51,43 @@ find [-H] [-L] [-P] [-Olevel] [-D debugopts] [path...] [expression]
 
 ## 示例
 
-1. 获取目录中所以以 host 开头的文件列表
+### 搜索但跳过指定的目录
+
+查找指定目录 `/user` 及其子目录下所有 `.txt` 文件，但是跳过子目录 `ignored`：
+
+```shell
+find '/user' -path "/user/ignored" -prune -o -name "*.txt" -print
+```
+
+`/user/ignored` 不能写成 `/user/ignored/`，否则无法匹配。
+
+忽略两个目录：
+
+```shell
+find . \( -path ./sk -o  -path ./st \) -prune -o -name "*.txt" -print
+```
+
+```shell
+find '/user' \( -path "/user/ignored1" -o -path "/user/ignored2" \) -prune -o -name "*.txt" -print
+```
+
+### 获取目录中所以以 host 开头的文件列表
 
 ```bash
 find /etc -name "host*" -print
-/etc/hosts.deny
-/etc/cloud/templates/hosts.debian.tmpl
-/etc/cloud/templates/hosts.suse.tmpl
-/etc/cloud/templates/hosts.redhat.tmpl
-/etc/cloud/templates/hosts.freebsd.tmpl
-/etc/host.conf
-/etc/hosts.allow
-/etc/hosts
-/etc/hostname
 ```
 
-2. 搜索包括 SUID 权限的文件
+### 搜索包括 SUID 权限的文件
 
 ```bash
 find /etc -perm -4000
 ```
 
-3. 找出所有权是指定用户的文件，然后复制到指定目录
+### 找出所有权是指定用户的文件，然后复制到指定目录
 
 ```bash
 find /root -user root -exec cp -a {} /tmp/ \;
 ```
-
-## 高级用法
 
 ### 根据文件或者正则表达式进行匹配
 
@@ -290,7 +284,7 @@ find . -type f -user tom
 find . -type f -group sunk
 ```
 
-### 借助`-exec`选项与其他命令结合使用
+### 借助 `-exec` 选项与其他命令结合使用
 
 找出当前目录下所有root的文件，并把所有权更改为用户tom
 
@@ -331,24 +325,6 @@ find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;
 ```shell
 -exec ./text.sh {} \;
 ```
-
-### 搜索但跳过指定的目录
-
-查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk
-
-```shell
-find . -path "./sk" -prune -o -name "*.txt" -print
-```
-
-> :warning: ./sk 不能写成 ./sk/ ，否则没有作用。
-
-忽略两个目录
-
-```shell
-find . \( -path ./sk -o  -path ./st \) -prune -o -name "*.txt" -print
-```
-
-> :warning: 如果写相对路径必须加上`./`
 
 ### 列出所有长度为零的文件
 
